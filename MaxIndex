@@ -1,0 +1,936 @@
+<head>
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Orbitron:400,700);
+   /* Made using snippets from @heathriel on codepen.io - Parallax Scrolling Website Template */
+   html,
+   body {
+	 height: 100%;
+	 /* The html and body elements cannot have any padding or margin. */
+	 -webkit-font-smoothing: antialiased;
+	 font: normal 14px arial,sans-serif;
+   }
+   
+   .row {
+	 margin-left:0px;
+	 margin-right:0px;
+   }
+
+   .column {
+  float: right;
+  width: 29%;
+  padding: 0px;
+
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+   
+   /* Wrapper for page content to push down footer */
+   #wrap {
+	 min-height: 100%;
+	 height: auto !important;
+	 height: 100%;
+	 /* Negative indent footer by its height */
+	 margin: 0 auto -60px;
+	 /* Pad bottom by footer height */
+	 padding: 0 0 60px;
+   }
+   .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  height: 50%;
+}
+.center2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 70%;
+}
+   /* Set the fixed height of the footer here */
+   #footer {
+	 height: 60px;
+	 margin-top:50px;
+	 padding-top:20px;
+	 padding-bottom:20px;
+   }
+   
+   #wrap > .container {
+	 padding: 60px 15px 0;
+   }
+   .container .credit {
+	 margin: 20px 0;
+   }
+   
+   #footer {
+	 background-color:#414141;
+   }
+   
+   #footer a {
+	 color:#efefef;
+   }
+   
+   h1,h2,h3,h4 {
+	 font-family: 'Orbitron', serif;
+	 vertical-align:middle;
+   }
+   
+   header {
+	 background: #000;
+	 height:350px;
+	 color:#000000;
+   }
+   
+   header h1,header h2,header h3 a,header a,header a:hover {
+	 font-family: 'Helvetica', sans-serif;
+	 color:#fff;
+	 text-decoration:none;
+   }
+   
+   h1 {
+	 font-size:400%;
+   text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+   }
+   p {text-align: center;}
+   p.l {text-align: left;}
+   div.ex1 {
+	   margin:0px auto;
+	   margin-top: 20px;
+	   width: 1100px;
+	 height: 200px;
+	   background-color: white;
+	   box-shadow: #254C58 1px 0px;
+	   border: #3C7D91 5px double; 
+	  padding: 10px 10px 10px 10px;
+	  overflow-y:scroll;
+	  float:right;
+   }
+   
+   div.ex2 {
+	   margin:0px auto;
+	   margin-top: 20px;
+	   width: 98%;
+	 height: 300px;
+	   background-color: white;
+	   box-shadow: #000000 1px 0px;
+	   border: #000000 5px double; 
+	  padding: 10px 10px 10px 10px;
+	  overflow-y:scroll;
+	  float:right;
+   }
+
+   /* Footer */
+   .footer {
+	 position: fixed;
+	 left: 0;
+	 bottom: 0;
+	 width: 100%;
+	 height: auto;
+	 background-color: black;
+	 color: white;
+	 text-align: left;
+   }
+   
+   @media (min-width: 767px) {
+	 .navbar-nav.nav-justified > li{
+		 float:none;
+	 }
+   }
+   
+   /* Used to create white space - similar to <br>*/
+   .divider {
+	   height:100px;
+   }
+   
+   .panel {
+	   border-width:0;
+   }
+   
+   @media (max-width: 768px) {
+	   header {
+		   height: 135px;
+	   }
+   }
+   section {
+	 color: #ffffff;
+	 min-height: 400px;
+	 height: auto !important;
+	 height: 100%;
+	 padding-top:100px;
+   }
+   
+   /* Responsive image for title/description */
+   .bg-1 {
+	   background: url('https://cdn.mos.cms.futurecdn.net/MBMvXvhX3L3uBr3YxWiUcn.jpg') no-repeat center center fixed; 
+	   -webkit-background-size: cover;
+		 -moz-background-size: cover;
+		 -o-background-size: cover;
+		 background-size: cover;
+   }
+   
+   /* carousel */
+   #quote-carousel 
+   {
+	 padding: 0 10px 30px 10px;
+	 margin-top: 30px 0px 0px;
+   }
+   
+   /* Changes the color of the indicators 
+   This controls profile picture sizes (unrelated) */
+   #quote-carousel .carousel-indicators li 
+   {
+	 background: #c0c0c0;
+   }
+   #quote-carousel .carousel-indicators .active 
+   {
+	 background: #333333;
+   }
+   
+   /* Setting the position of the profile pictures */
+   .ProfilePic { 
+			   float: left;  
+			   margin: 5px;
+			   margin-top:50px
+   }
+
+   /* Setting up names for personal profiles */
+   h6 {
+	 font-size:15px;
+	 font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	 vertical-align:top;
+   }
+   /* Setting the size of the profile pictures */
+   .PP {
+	   width: 100%; 
+				   height: 100%; 
+				   object-fit: contain; 
+   }
+   .gfg { 
+                width:auto; 
+                text-align:center; 
+                padding:20px; 
+            } 
+            img { 
+                max-width:100%; 
+                        height:auto; 
+            } 
+
+   
+   /* Small devices (tablets, 768px and up) */
+   @media (min-width: 768px) { 
+	   #quote-carousel 
+	   {
+		 margin-bottom: 0;
+		 padding: 0 40px 30px 40px;
+		 margin-top: 30px;
+	   }
+	   
+   }
+   
+   /* Small devices (tablets, up to 768px) */
+   @media (max-width: 768px) { 
+	   
+	   /* Make the indicators larger for easier clicking with fingers/thumb on mobile */
+	   
+	   #quote-carousel .carousel-indicators {
+		   bottom: -20px !important;  
+	   }
+	   #quote-carousel .carousel-indicators li {
+		   display: inline-block;
+		   margin: 0px 5px;
+		   width: 15px;
+		   height: 15px;
+	   }
+	   #quote-carousel .carousel-indicators li.active {
+		   margin: 0px 5px;
+		   width: 20px;
+		   height: 20px;
+	   }
+	   
+   }
+	</style>
+   </head>
+   
+   <body>
+	   
+   <div id="wrap">
+	 
+	   <section class="bg-1">
+		   <!--Responsive image/title and description-->
+		   <div> <p class="lead" style="color:black;font-size:80px;"><strong> Water Near You </strong></p>
+			 <p style="color:black;font-size:30px;"> Be informed about the water in your city.</p></h1></div>
+		 </section>
+		 
+	   <div class="container">
+		 <div class="col-sm-10 col-sm-offset-1">
+		   <div class="page-header text-center">
+			   <!--Tab to describe/introduce our project-->
+		<h2 style="text-align : center; font-size:5vw;"> <p.l>Our Project</p.l></h2>
+		   </div>
+		   <div class="ex2">
+			   <h2>waterLog</h2>
+		   <p.l>
+			<br>waterLog will be an application in which people can obtain certain parameters from water in most main cities in Australia, later this will be increased from not only Australia but to most of the world's countries. These water parameters presented to the user will be derived through the provided tap water for the destination, all data for which will be provided through government and/or official company websites and databases. The end goal for this application is to provide easily accessible data across the world, especially in places that lack clean drinking water. 
+			<br>The parameters that will be provided to the user include general water hardness, PH, chlorine, trace elements and more. These parameters can be helpful for many people from all different walks of life, people with health issues, appliances, professions to fish lovers will find this application helpful.
+			<br>waterLog will source all relevant data listed from the city's water management website, we will compile all the relevant data into a database that is to be implemented into a mobile phone application and website. The data will be presented in the application/website in a clean, professional looking user-oriented design. The focus of these apps is to provide people with data surrounding the water near them, in a fast and easy way to interpret.<br>
+			
+			
+			<br>The motivation behind waterLog came as a result of owning fish, I (Max Torti) had recently gotten into the hobby and needed specific water data. Fish require different water parameters depending on where they are naturally found, for example fish from Africa will require harder and less acidic water. While researching water in my area I had to go through multiple websites and applications to find what was relevant to me, however I still needed to buy a water test kit as I wasn’t familiar nor did I trust some of the data sources I used. waterLog hopes to remove this issue for other members of the public in the same situation, to provide clear data from valid sources such as the government issued water site for each city and state.
+			<br>After studying the data surrounding water myself, I realised that an application that provided this data in an easy to interpret way would be very helpful. 
+			<br>Water, however, isn’t only important to fish keeping. Water is the most important resource to humans; we need it to survive both to drink and eat as most of our food sources rely on water to grow. Due to this it makes waterLog relevant to different professions and needs, professions such as people who deal with hydroponics or choosing what pipes to lay for housing. 
+			<br>People involved with hydroponics may need data surrounding what water they use in their systems, waterLog will be following all relevant posts from the water quality specialists assigned to water management systems across the country, to ensure all of the data we provide to users is accurate and up to date.
+			<br>Water has a lot of beneficial attributes for the human body, such as calcium and magnesium. However, for some kitchen appliances some of these minerals will cause build ups of unwanted gunk, potentially posing health risks or damaging the appliance itself. This is an example of the usefulness of waterLog, as taps/water outlets are susceptible to build up.
+			<br>Certain places in the world don’t offer safe drinking water through taps, providing these places with the data that determines if water is safe is crucial to human survival. Travellers who are visiting new countries might find value in the data we supply, as waterLog will be able to clearly distinguish the quality of water and if it is safe to drink. 
+			<br>For us lucky few who live in cities that offer clean water from the tap, this data can even determine how different the water will taste from city to city (Hardness, PH, Calcium, Magnesium, Sodium and Chlorine can all cause changes in waters taste, colour or even texture).<br>
+			
+			
+			
+			<br>waterLog will be an application and website in which the user either selects what city they live in on a map of Australia or they simply enter the city in the provided box, once they have either selected or written their city the data for that specific area is shown. The map of Australia will be interactive, users can hover over states and get the information they are seeking. Using this interactive map not only looks professional but also makes the data easy to obtain and interpret.
+			<br>In the mobile phone application, we will have the same interactive map however we will add an option for text/voice input. Using text/voice input it furthers the ease of use for the user.
+			<br>Once the application is downloaded to a user’s phone, it will ask permission to obtain the user’s position, using GPS as to address when notification is sent. The user can opt in or out of the GPS, if for example the user opts out, they can manually set their city/destination via text or speach or just leave it blank. The notifications will be sent whenever there is a change in the water quality, water containment and delivery infrastructure or contaminations in the user’s area. 
+			<br>Notifications will be sent depending on the user's location, as the notifications will be surrounding changes to the user’s water management system of their city/state. If the user doesn’t enter their destination or enable GPS, the notifications will not be sent, however they can view all notifications in the app itself under the “notifications” tab.
+			<br>The tools needed to create both the mobile phone app and the website are as follows:
+			<br>•	A computer capable of running a programming encoder with access to the internet.
+			<br>•	HTML
+			<br>•	CSS
+			<br>•	Java
+			<br>•	JavaScript<br>
+			<br>Potential tools needed in creation of waterLog:
+			<br>•	MySQL
+			<br>•	Python
+			<br>•	Swift
+			<br>The main skills required for constructing waterLog is programming, due to our project being completely software related there is little else needed. Knowledge in multiple different programming languages will be needed, HTML/CSS will be used to create the website, Java will be used to make the mobile phone application (for devices running Android)and JavaScript will be used to make the interactive map. 
+			<br>Other programming languages may be needed for the creation of waterLog, MySQL may be needed to create a database in which all of the data is stored, Python may be needed to further extend the capabilities of the app and interactive map and Swift may be needed to create a version of the app for devices running IOS operating system.<br>
+			
+			
+			
+			<br>In the initial proposal for waterLog (or “Water Near You”, as it was called) the application was to use user entered data, with the user entered data it would calculate the mean and present that to new users. However, it was later discovered that this was not favourable as it relied too much on the user. Due to that it was decided to obtain the relevant data ourselves, to do so we will source it from sites such as: https://www.melbournewater.com.au/water-data-and-education/water-facts-and-history/why-melbournes-water-tastes-great/testing-water 
+			<br>PDF’s can be found that supply the data needed from a credible source, one such PDF is entitled “Water Quality Annual Report 2018-19".
+			<br>In response to the feedback from assignment 1, we will source the data ourselves, rather than relying on members of the public who use the waterLog to provide the data themselves. This feedback was completely understandable and greatly appreciated, as this means we won’t need to rely on the users to conduct any tests themselves. Outsourcing all the data further improves the ease of use for users, ensures the promotion of valid information and limits the size of database needed to run the application.
+			<br>The intended outcome of the application and website will be an interactive map in which when the user hovers over a city in Australia, the data surrounding that city comes up in a text box. People using the Android app will be able to receive notifications on changes to their city’s water management system. As stated before, the data will be sourced from the city's water management/storage website, as to ensure the data is valid and relevant to current times.
+			<br>The data in which we will provide to users will contain most if not all of the following (depending on the recent testing of water supply):
+			<br>•	PH
+			<br>•	Colour (Pt/Co)
+			<br>•	Iron
+			<br>•	Manganese
+			<br>•	Fluoride
+			<br>•	Calcium
+			<br>•	Hardness
+			<br>•	Magnesium
+			<br>•	Nitrate
+			<br>•	Alkalinity
+			<br>We believe these are the most relevant elements to be derived from water, most water based activities or problems depend on the listed elements.<br>
+			
+			
+			
+			<br>waterLog’s main objective is to inform the public with valid data surrounding the water provided to them from their tap. waterLog initially will only provide information regarding main cities in Australia, however we hope to eventually branch it out into most countries of the world. waterLog can be extremely beneficial in countries that lack clean drinking water, as it can help to determine where people can obtain safe drinking water.
+			<br>waterLog is beneficial to fish keepers as each species of fish require specific parameters, such as hardness and PH. Every water supply across the world can differ in parameters, some examples extremely. Due to this it is important for the fish owner to choose what species they decide, depending on what water is available to them. You can alter water PH/hardness however to do so it can be very expensive, and you may need to add chemicals.
+			<br>Due to the importance of water in every human's life, having that information at the simple click of a button is very helpful. No matter the reason may it be health, work or leisure this project works into many markets. With this huge potential of influence and water being a resource that literally every human must encounter daily, waterLog is very relevant, practical and monetizable.
+			
+	   
+		</p.l>
+		</div>
+		 </div>
+	   </div>
+
+	   <div class="container" id="section3">
+			 <div class="container">  
+		  <div class="row">
+		   <div class="col-md-offset-2 col-md-8">
+			 <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+   
+			   <div class="carousel-inner">
+			   
+				 <div class="item active">
+				   
+					 <div class="row">
+					   </div>
+					   <div class="divider"></div>
+						   <!--Tab to further elaborate on our project-->
+						 <h1><p.l>Project Objective</p.l></h1>
+				
+					   <div class="col-sm-12 text-center">
+						 <p>Water is the most crucial resource to humans, however there are many more uses of water then you may think.<br>
+					   Water is important for many day to day activities, listing from using kitchen appliances, plumbing, health and hobbies.<br>
+				   With water being a crucial part of all of our lives, there is some data surrounding water that may be needed.
+			   <br>Water PH or Hardness may be important to some professions such as plumbing, or hobbies such as fish keeping.<br>
+		   Water Near You aims to make these water perameters easily accessible to the public, for no cost. </p>
+					   </div>
+					 </div>
+				   
+				 </div>
+				 <div class="divider"></div>
+				 <div class="item">
+				   
+					 <div class="row">
+					   <div class="col-sm-12 text-center">
+						   <!--Tab for team overview - possibly talk about ideal jobs here-->
+						   <h1><p.l>Our Team</p.l></h1>
+					   </div>
+					   <div class="col-sm-12">
+						 <p>Our team consists of 6 individuals who have interest and experience in many aspects of I.T, 
+							 <br>consisting of cyber security, data management, web development, cloud computing and hardware.
+						
+					   </div>
+					   <!--Personal Profiles-->
+					   <!--Liam's tab-->
+					   <h6><br>Liam O'Dell</h6>
+					   <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="ProfilePicture" height="200" width="200">
+					   <div class="ex1">
+						   S3879123
+I was born in rural NSW and moved to Sydney when I was 18 years old. I am currently employed as a Coach and Administrative Officer at a Martial Arts Academy on Sydney’s North Shore. I graduated from South Grafton High School in 2013. I am currently enrolled in an IT degree at RMIT university and am studying via Open University. As well as work and education I compete in Muay Thai Kickboxing, Submission Grappling and Folkstyle Wrestling Competitions at both regional and state levels.
+From making video games to website and app design, I have been tinkering with aspects of IT since my family got its 1st computer in 2004. Now as an adult I have started this degree to learn more about technology. The parts of Information Technology that interest me are mainly cyber security, application design and sharing Technology with the world. I am passionate about making the world a better place through the tools that Information Technology supplies us.
+					   </div>
+					   <div class="divider"></div>
+					   <div class="row::after">
+						<div class="column">
+						  <img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="LiamPersonalityImage1" width="300" height="500">
+						</div>
+						<div class="row::after">
+						<div class="column">
+						  <img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="LiamPersonalityImage2" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="row::after">
+						<div class="column">
+							<img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="LiamPersonalityImage3" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <!--Imogen's tab-->
+					   <h6><br><br>Imogen Leaver</h6>
+					   <img src="https://raw.githubusercontent.com/MaxTRMIT/Assignment2waterLog/main/Profile%20PhotoC.jpg" height="200" width="200" alt="ProfilePicture">
+					   <div class="ex1">
+						   <h2 style="color:powderblue;">About Me</h2>   
+						   <p.l style="font-family:courier;">RMIT Student Number: s3667801.</p.l>
+							 <p.l style="font-family:courier;">My name is Imogen Leaver, I am Australian born, of English, Irish and Scottish decent.</p.l>
+						   <p.l style="font-family:courier;">I only speak English, however my sister-in-law is half Peruvian, and is determined to teach me Spanish.</p.l>
+						   <p.l style="font-family:courier;">I am currently completing a Bachelor of Business – Financial Planning, having gained recognition of prior learning from a Diploma in Business.</p.l>
+						   <p.l style="font-family:courier;">I love riding my bike, going to the beach, travelling (on hold thanks to COVID), my family and considering the environment.</p.l>
+						   <br>
+						   
+							<h2 style="color:powderblue;">Interest in IT</h2>
+						   <p.l style="font-family:courier;">This IT unit is a core subject in my business degree, running two business, I completely appreciate why IT is essential to understanding and learning about business. It is the platform on which we communicate, manage eCommerce, accounting, taxation, and advertise and market our business.</p.l>
+						   <p.l style="font-family:courier;">I am currently in the process of creating an ecommerce website, it has shown me how ignorant I was about IT (and how fundamental it is to modern business). I am keen to learn more through this course, if not to sound less ignorant, to be more self-sufficient with managing this side of business.</p.l>
+						   <p.l style="font-family:courier;">I arrived at RMIT because it offered the specific degree I was after, my key interest is business, specifically the financial planning aspect (of life & business). Other universities offer similar commerce, accounting, finance, and business degrees, however not with the financial planning angle.</p.l>
+						   <p.l style="font-family:courier;">I only have 6 subjects left to complete my degree, I have learnt so much thus far and expect to expand my knowledge of financial and accounting compliance, wealth creation and management, and of course IT!</p.l>
+						   <br> 
+							 <h2 style="color:powderblue;">IT Experience</h2>
+						   
+						   <p.l style="font-family:courier;">I am currently completing a business degree, analysing business to improve efficiency and profitability is what I am passionate about.</p.l> 
+						   <p.l style="font-family:courier;">I have worked in senior business roles for over a decade, I have experience managing teams, liaising with all levels of business support and management, improving business procedures and profitability and as mentioned above, I am currently in the last stages of completing a business degree (majoring in financially planning), which will solidify and streamline my business experience. I certainly could expand my knowledge in IT (which at present is reasonably basic), it is an area where I have previously relied on expert team members and departments to support me. I am hoping this unit in addition to further hands on experience, especially in the technical side of IT will improve my competency and eligibility for employment positions such as this.</p.l>
+						   <br>
+					   </div>
+					   <div class="divider"></div>
+					   <div class="row::after">
+						<div class="column">
+						  <img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="ImogenPersonalityImage1" width="300" height="500">
+						</div>
+						<div class="row::after">
+						<div class="column">
+						  <img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="ImogenPersonalityImage2" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="row::after">
+						<div class="column">
+							<img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="ImogenPersonalityImage3" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <!--Andrew's tab-->
+					   <h6><br><br>Andrew Rijs</h6>
+					   <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"  height="200" width="200" alt="ProfilePicture">
+					   <div class="ex1">
+						   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+						   Why do we use it?
+						   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+						   
+						   
+						   Where does it come from?
+						   Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+						   
+						   The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+						   
+						   Where can I get some?
+						   There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the 	
+					   </div>
+					   <div class="divider"></div>
+					   <div class="row::after">
+						<div class="column">
+						  <img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="AndrewPersonalityImage1" width="300" height="500">
+						</div>
+						<div class="row::after">
+						<div class="column">
+						  <img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="AndrewPersonalityImage2" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="row::after">
+						<div class="column">
+							<img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="AndrewPersonalityImage3" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <!--Henry's tab-->
+					   <h6><br><br>Henry Robinson</h6>
+					   <img src="https://raw.githubusercontent.com/MaxTRMIT/Assignment2waterLog/main/Henry.jpg" height="200" width="200" alt="ProfilePicture">
+					   <div class="ex1">
+						   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+Why do we use it?
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+
+Where does it come from?
+Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the 
+					   </div>
+					   <div class="divider"></div>
+					   <div class="row::after">
+						<div class="column">
+						  <img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="HenryPersonalityImage1" width="300" height="500">
+						</div>
+						<div class="row::after">
+						<div class="column">
+						  <img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="HenryPersonalityImage2" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="row::after">
+						<div class="column">
+							<img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="HenryPersonalityImage3" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <!--Benjamin's tab-->
+					   <h6><br><br>Benjamin Christy</h6>
+					   <img src="https://raw.githubusercontent.com/MaxTRMIT/Assignment2waterLog/main/benchristy.jpeg"   height="200" width="200" alt="ProfilePicture">
+					   <div class="ex1">
+						<h2>About Me</h2>
+						<p>I am a 90s kid born and reside in South Australia. <br>
+						I do have a Viking background and I only speak english in my home.<br>I love messing around with Linux and virtual machines and have a 11y/o fur baby called clue.</p> 
+						<h2>What is my interests in IT?</h2>
+						<p>My interest in IT has always been in the communication side of things (networking). I am fascinated on how many different forms of communication there are now. Whether it’s basic Wi-Fi, to running several VLAN’s on a large network, I love how data is transferred and how we secure it. We have become so dependent on it now cybersecurity and network professionals are needed more than ever and I am lucky enough that it is where I feel like I am most suited.</p>
+						<h2>Why did I choose RMIT?</h2>
+						<p>I choose to come to RMIT because they had the course I needed to complete to get into my bachelors in IT which is specializing in networking and cybersecurity through Uni SA</p>
+						<h2>do I expect to learn through my studies?</h2>
+						<p>I expect to learn the basics of IT and gain a better understanding of the field I am going into as well as gaining knowledge and some experience to excel in my chosen field. And help me push f orward in my career.</p>
+
+					   </div>
+					   <div class="divider"></div>
+					   <div class="row::after">
+						<div class="column">
+						  <img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="BenPersonalityImage1" width="300" height="500">
+						</div>
+						<div class="row::after">
+						<div class="column">
+						  <img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="BenPersonalityImage2" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="row::after">
+						<div class="column">
+							<img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="BenPersonalityImage3" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <!--Max's tab-->
+					   <h6><br><br>Max Torti</h6>
+					   <img src="https://user-images.githubusercontent.com/70696652/93361356-1f254b80-f888-11ea-9a5b-36b90355d2bc.jpg" height="200" width="200" alt="ProfilePicture">
+					   <div class="ex1">
+						<h2 style="color:powderblue;">Max Torti</h2>
+						<br>s3871671
+						<br>S3871671@student.rmit.edu.au
+						<div class=”divider”></div>
+						
+						<h2 style="color:powderblue;">About Me:</h2>
+						<br>I am from Gold Coast Australia, born 2003 and have completed a certificate 3 in tourism and grade 10. One fact about myself is that when I was 15, I made a bitcoin mining machine, using 2 rx 570 graphics cards and a second hand motherboard, cpu, ram and powersupply. Mining rigs are getting less and less viable, so once the rig’s profitability dropped, I dismantled it and used the parts in desktop PC’s. However even though I didn’t mine for long, it really pushed my interest in IT to the next level.
+						<h2 style="color:powderblue;">Interest In IT:</h2>
+						<br>I have knowledge in Java, MySQL, and I know a little HTML/CSS. I am planning on learning Javascript and Python in the future. With this knowledge both now and soon to be learnt, I am most interested in data centres for my future job, I feel that as our world has accepted technology and the population keeps growing, Data management is a field that will be in high demand.
+						<h2 style="color:powderblue;">IT Experience:</h2>
+						<br>I don’t have any professional experience in the IT field yet, however I have assembled computers for friends for a profit.<br>
+					   </div>
+					</div>
+					<div class="divider"></div>
+					<div class="row::after">
+					 <div class="column">
+					   <img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="MaxPersonalityImage1" width="300" height="500">
+					 </div>
+					 <div class="row::after">
+					 <div class="column">
+					   <img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="MaxPersonalityImage2" width="300" height="500">
+					 </div>
+					</div>
+					<div class="row::after">
+					 <div class="column">
+						 <img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="MaxPersonalityImage3" width="300" height="500">
+					 </div>
+					</div>
+				   </div>
+				   <div class="divider"></div>
+				   <div class="divider"></div>
+				   <div class="divider"></div>
+						 <!--Team Profile-->
+						   <p><h1><br><br>Team Profile</h1></p>
+						  
+<br><p.l>Our team has taken various personality tests to help indicate how we will function together .
+
+					<p.l>A Myers-Briggs test by 16 Personalities reveals that we have a Protagonist, an Architect, a Logician, a Virtuoso and two Mediators. 
+					With this information, we can speculate on how the group may function as the project unfolds. <br><br>
+
+				The Protagonist would take a leadership and organisation role, especially in the initial formation of the group. 
+				The Architect and Logician may come up with the initial blueprints of the idea, with the Virtuoso also having significant input.<br> <br>
+
+					Off of the cusp, abstract ideas will often be contributed by the mediators and the Virtuoso, as well as other members of the team. 
+					The mediators and the protagonist will also be available to help the Architect, Logician and Virtuoso in communicating their ideas effectively with the group. <br><br>
+
+					The team has also individually taken a combination of learning styles tests, which has shown that we have a broad mix of learning preferences. 
+					The groups balance of auditory, visual, kinaesthetic and other learning styles will give us a healthy range of ideas and problem solving techniques to utilise from. <br><br>
+
+						Finally, a big 5 test reveals that our team is quite mixed in makeup. Most members are at partially extroverted, however some are not. 
+						This will mean that our team must be conscious of being inclusive with sharing input, and asking everybody for their opinions.  
+					Most team members are generally quite agreeable, which will hopefully mean collaboration is easy for us during group meetings. 
+						Most of our team members scored highly in openness/imagination and will be able to contribute creative ideas to our final project.<br><br>
+
+					Overall our group has a strong mix of personalities and  learning methods which will allow for a diverse range of ideas and opinions. 
+					Our hope is that this group dynamic is rich enough that everyone will have had a strong role to play in the overall project. 
+						   </div>
+					 </div>
+				   
+				 </div>
+   
+				 <div class="item">
+					 
+					   </div>
+					 </div>
+				  
+				 </div>
+
+				 <div class="divider"></div>
+				 <div class="item">
+   <h2 style="text-align : center; font-size:5vw;"> <p.l>IT Technologies.</p.l></h2>
+				<h1>Clouds, Services and Servers</h1>
+						   
+					   </div>
+					   <div class="col-sm-12">
+						<div class="col-sm-12">
+						   <h2>What does it do?</h2>
+						 <p.l>Cloud computing has been around for 20 years or so, it is an operational technology used for a plethora of purposes.
+						 Clouds are communal resources (computers, applications, storage systems and services) where data is stored on another computer. Clouding computing is essentially outsourcing or centralising servers to facilitate access from anywhere and eliminating restrictions to a location, for example, a cloud host for a website allows everyone in the world to access the website from any device.
+						Cloud computing also offers additional security features and provides for automatic maintenance and updates, generated remotely, and uploaded to your devices upon authorisation.
+						   <h2>What can be done now?</h2>
+						 Today there are three main types of cloud computing, Public, Private and Hybrid:
+						  Public clouds are owned and managed by a cloud provider, who delivers services to a customer via an online account. All hardware, software and infrastructure is managed by a third-party.
+						  Private cloud services are wholly owned and utilised by an organisation, the hardware can either be located onsite or offsite (supplied by a third-party host). The services and infrastructure are managed on an exclusive network.
+						   Hybrid clouds are a combination of both private and public clouds, where data and applications are pooled between both clouds. Its offers flexibility and utilises existing infrastructure, security, and compliance.
+						   There are also three main types of cloud services:>
+						   Software as a Service, aka SaaS, is a service which delivers software applications over the internet. The software provider hosts, manages, and maintains the application and all underlying infrastructure. It is generally hired on a subscription basis and connected via an account over the internet.
+						   Platform as a Service, aka PaaS, provides a platform for developing, testing, delivering, and managing software applications. The user, usually a developer, pays for the hired use of the infrastructure, storage, network, and database to develop.
+						   Infrastructure as a Service, aka IaaS, is as basic as cloud computing goes, you rent infrastructure (servers, virtual machines, storage, networks, operating systems) from the provider and pay on demand.
+						   <h2>What is likely to be done soon?</h2>
+						   In the next few years, almost all computing will be done via cloud. Cloud computing is built for automation, so can merge with legacy, current and new technologies to create an efficient, dynamic system.
+						   A future focus on better cohesion with legacy systems will allow businesses with complex and ridged operating structures to transfer to a cloud-based operating system more easily.
+						   Micro data centres are gaining traction, these compact units are located close to devices (which requires less bandwidth), where they perform certain tasks previously performed by large data centres.
+						   Microsegmentation is an emerging software method used for data security, it creates an isolated ‘secure zone’ in a data centre, minimising the breadth and impact of a security breach.
+						   With the increased need for data comes the increased need to deliver data faster, Non-Volatile Memory Express (NVMe) is a storage protocol which accelerates the transfer of information between systems, drastically enhancing data relocation.
+						   <div class="divider"></div>
+						   <div class="row">
+					   <div class="col-sm-12 text-centre">
+						<p> <h1>Cybersecurity.</h1></p>
+					   </div>
+					   <div class="col-sm-12">
+						 <p.l>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p.l>
+					   </div>
+					 </div>
+				  
+				 </div>
+
+				 <div class="divider"></div>
+   
+				 <div class="item">
+   
+					 <div class="row">
+					   <div class="col-sm-12 text-centre">
+						<p> <h1>Blockchain and Cryptocurrencies.</h1>
+					   </div>
+					   <div class="col-sm-12">
+						   <p><h2>What does it do?</h2>  
+
+						   <br><h3>What is the state of the art of this new technology?</h3>  
+
+Blockchain technology was originally described in 1991 by a group of researchers. Its original purpose was to time stamp digital documents so it would not be possible to backdate or tamper with them. This was, for the most part, an unused technology until 2009 when Satoshi Nakamoto adapted it to create the cryptocurrency Bitcoin. Bitcoin is the first and most popular Cryptocurrency but there are over 1,500 different kinds of Cryptocurrencies now. Blockchain is a Technology that allows us to have distributed, decentralized currency like Bitcoin and Ether. A Blockchain is essentially a ledger that records information in blocks. The blocks store 3 different types of information to create a profile for the currency stored.  
+
+Information about the transaction, for example, the date time and amount 
+
+Information about who is involved in the transaction  
+
+Information that distinguishes them from other blocks, these are called hashes.  
+
+Each block has a profile called a hash. A hash is a way to identify exactly what the block is, like a fingerprint. Changing something inside the block will make the hash change. Aswell as their current hash, blocks store the hash of the previous block, thus creating a chain. (How does a blockchain work - Simply Explained, 2020) 
+
+ 
+
+<br><h2>What can be done now?</h2>  
+
+As Blockchain Technology evolves and becomes more versatile it is being used in more areas and projects outside Cryptocurrencies. For a system to have currency it must be extremely secure. This has naturally made Blockchain technology a hub for applications that need to hold and transfer secure files. Applications like Chronicled and CoinDesk rely on the Security that Blockchain presents to keep their information safe. Chronicled has its own Blockchain Technology that is uses to send data.  This is used to send Legal Documents, Supply chain and IOT tracking forms. CoinDesk is a platform that also uses blockchain, but for a different reason. CoinDesk was used by the United Nation World Food Program to give recourses to thousands of Syrian Refugee’s using Cryptocurrency Vouchers to purchase Olive oil, seeds and lentils. These are just 2 examples of how we can use this Technology to propel the world forward. (4 Blockchain Uses Besides Cryptocurrency | Venafi, 2020)  
+
+						   <br><h3>What is likely to be able to do be done soon (say in the next 3 years)?</h3>  
+
+In an interview we did for another segment of this assignment we interviewed a Software Engineer that is currently working on remodeling the entire back-end system of the ASX. They are currently testing and creating new segments of the CHESS back end operating system of the ASX. The Software Engineer stated that the implementation of a Blockchain system is being used to add an extra level of security with the ability to track and pinpoint transfers and purchases in a millisecond. This technology is going to continue to be implemented in our Financial systems as our governments catch up the forefront of our Technological abilities. It is likely that The Australian banks will start to change their tone on Blockchain systems and Cryptocurrency as it is being implemented into our Government Financial systems and their already existing infrastructure.  
+
+What technological or other developments make this possible?  
+
+ As Cryptocurrencies have only come to the forefront of popularity in the last decade, people often assume that the blockchain technology that houses it was created alongside it. The developments that allow large companies to use smart languages to create their own Blockchains started in 1991. Blockchain is known as a more recent technological development but must remember that blockchain isn't a software it’s a system, a system that has been under development for 29 years. Bitcoin may be the most popular Cryptocurrency, but it wasn’t the first. In 1998 Nick Szabo started work on ‘Bit Gold’ a digital currency. Bitcoin wasn’t created for another 10 years in 2008 when Satoshi Nakamoto released a paper stating the model of the Cryptocurrency Blockchain. The actual BTC digital currency was created 1 year later in 2009. (History of blockchain, 2020) 
+
+ 
+
+ 
+
+<h2>What is the likely impact?</h2><br>  
+
+						   <h3>What is the potential impact of this development?</h3> 
+
+Blockchain Technology itself has changed the IT World because of the ability to store and transfer data securely without a middleman. Along with this Technology, Blockchain brought along Cryptocurrencies with it. The Commonwealth Bank states that it does not allow the purchases of cryptocurrencies through their account because of volatility. It is likely that this is not the only because of its volatility but because of the likely impact of a system like Blockchain that doesn’t need 3rd parties like banks, brokers or other financial institutions to help the process along the way. This cuts out a huge part of our financial industry. (CBA blocks credit card purchases of virtual currencies, 2020) 
+
+The impact will likely be like a lot of the other automation changes that affect the finance industry. As systems get automated, humans who work in those systems lose their jobs.  
+
+<br><h3>What is likely to change? Which people will be most affected and how?</h3>   
+
+The people who would be the most affected would be businesses and the individuals who are either developing the new technology or being replaced by it. Businesses will be forced change their systems to integrate with the ever-changing world of Blockchain ledgers and their advanced security. With competitor’s moving onto smart languages and creating their own blockchains, businesses will have to educate, specialize and evolve to keep up with their respective industries.  
+ 
+
+<br><h3>Will this create, replace or make redundant any current jobs or technologies?</h3> 
+
+We are likely to see many people lose their jobs through automation and the addition of things like Blockchain that cut our potential parties from a financial interaction. The finance industry has been and will continue to adapt to the changes in the Technology. With the changing landscape of the industry comes the need for specialist positions for people who handle automation. For example, if a bank has to fire 50 of their teller staff because of the implementation of a blockchain system that replaces most of their work, they will most likely have to hire specialists to build the system out of a secure smart language. This people will need to maintain and build the blockchain and language as it is now an integral part the business model. 
+
+ 
+
+ 
+
+<h2>How will this affect you?</h2>   
+
+<br><h3>In your daily life, how will this affect you?</h3>   
+
+The explosion of bitcoin and all 1’500 other cryptocurrencies have garnered a lot of attention. This development on the financial side, along with blockchain technology has naturally started to replace some of the less secure versions of the technology. People are starting to purchase more cryptocurrency because of the safety and security that the Blockchain brings.  
+
+Larger companies and government sectors have started replacing their systems with Blockchain. You can see has slowly creeped into a lot of other sectors. Law firms apply the use of a blockchain system for safe and secure transfer of Smart Documents.  
+
+I think that blockchain, not cryptocurrencies, are the technology of the two that has/will affect the landscape of the world to more significance.   
+
+<br><h3>What will be different for you?</h3>   
+
+Cryptocurrencies were almost taboo when I first heard about them in 2015. As Blockchain Technology and Cryptocurrencies get more integrated into everyday society it is likely that the Australian banks will be more open to purchasing Cryptocurrencies through there interface instead of having to transfer it to a 3rd party like PayPal. For me, this will streamline to purchasing process of cryptocurrencies like Ethereum or XRP.  
+
+<br><h3>How might this affect members of your family or your friends?</h3>  
+
+My libertarian or more financially savvy friends will be delighted to the development of these technologies whereas the other, larger, percentage of my family and friends will have no idea that their entire amazon order is processed by one of the most advanced Blockchains on earth.  </p>
+</p>
+					   </div>
+					 </div>
+				  
+				 </div>
+
+				 <div class="divider"></div>
+   
+				 <div class="item">
+   
+					 <div class="row">
+					   <div class="col-sm-12 text-centre">
+						<p> <h1>Machine Learning</h1> </p>
+					   </div>
+					   <div class="col-sm-12">
+						 <p.l>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p.l>
+					   </div>
+					 </div>
+				  
+				 </div>
+				 <div class="divider"></div>
+<img src="https://gykam.com/previews/the-dangers-of-using-hot-tap-water-for-cooking-and-drinking-1545253415639.jpg" height="200" width="700" class="center">
+
+				 <div class="item">
+				   
+					<div class="divider"></div>
+   
+					<div class="item">
+	  
+					  <!--IT Work tab-->
+						<div class="row">
+						  <div class="col-sm-12 text-centre">
+							<p><h1>Professional Interview</h1></p>
+						  </div>
+						  <div class="col-sm-12">
+							<p.l>							<p>The interview that we conducted was with an IT professional that works with both a independent software contractor and the Australian Securities Exchange (ASX). Below you will find a summary of the answers given by our Interviewed IT Professional. Due to contract issues we are unable to use the recording, but I have attached the transcript in the report attached.  
+
+
+
+								<h2>1. Please tell us about your IT work. What exactly do you do?</h2>
+  
+  Most of my work is in the financial markets. Previously I worked in research roles using programming to research different concepts in the stock market. My current role is technically called product owner with a software development company that is replacing the ASX backend clearance and settlement system which is basically a big database.<br>
+  
+  It's quite a well-known system it's called chess. The last time it was replaced was 30 years ago. We are using a Distributed ledger like a block chain solution. The company I work for has their own smart contracting language that pairs the buyers and the sellers together. The role that I'm in is product owner.<br>
+  
+  This is that under the agile model of software development. Where you have short term targets and sprints in contrast to a waterfall model where you’ll be planning for months or even years. Because there is a big infrastructure, we must split everything into like 2-week intervals. My role is to communicate from the customer, The ASX, and our team of software engineers and testing for any problems that may come up under the ASX Security guidelines.<br>
+  
+  <br><h2>2. Please tell us about the industry you work in.</h2>
+  
+  I’ve always been in financial markets. Previously as a big broker dealer for Charles Shaub. Most of my work is about financial markets. Either stocks or the backend plumbing of how it works. ITs great being multi-industry because I have so much room to work with. 
+  
+  <br><h2>3. What other kinds of work do you have to do?</h2>
+  
+  In Previous roles I've done a lot of managerial stuff, current role is slightly different as instead of managing people our professional is a managing a product.  
+  
+  A Large portion of work is writing tests to make sure that everything in the project is by ASX standards of development and security.  
+  
+  <br><h2>4. Who are all the different people you interact with in your work? Please tell us about them.</h2>
+  
+  
+  I'm the bridge between the IT guys and the finance guys so they’re is a big range of personality types that I've got to work with. 
+  
+  <br><h2>5. Please tell us about your interactions with other IT professionals.</h2>
+  
+  Because of the nature of the project we have some of the best developers from around Australia for the languages that we are using. We have a lot of smart and quirky people. Overall, everyone is quite professional and nice on the IT side of things. Everyone on the ASX side is a little more integrated into suit culture but also still very nice people. As I must be the bridge between the finance guys and the IT guys it helps to be friends with them all to understand where they are coming from. 
+  
+  <br><h2>6. What about your interactions with clients or investors?</h2>
+  
+  There can be challenges with any client, especially such a bug project like this, there are times where we don’t agree on what should be done. In that case we must negotiate to get the client what they want while still doing it in a safe, efficient and sustainable way.  
+  
+  <br><h2>7. What aspects of your work do you spend most time on? Please tell us about these.</h2> 
+  
+  When I started it was learning how to communicate with my coworkers effectively and get like settled in but now the most time would be to write those tests that verify that we are doing the right thing, something that meets the requirements. A lot of it is managing the workload of others but currently in the project it's a lot of tests. 
+  
+  <br><h2>8. Which aspects of your work do you find most challenging?</h2>
+  
+  I made a very big change to get into this role, as I hadn't done any of the background or plumbing stuff yet. I didn’t have much exposure to all the little transfers and terms that the ASX has for things. Smart contacts and the new test language were also a big struggle to learn. It took me about 6 months to feel like I was adding value to the team as there was just so much to understand when I started. 
+  
+  <br><h2>9. Finally, can you share an example of the work you do that best captures the essence of the IT industry?</h2>
+  
+  I don’t know that seems like a vague one so I'll try put it as best as I can. Using the latest technology to improve technologies, to streamline and to make things easier and more efficient for everyone. </div>
+						  </p>
+							</div>
+						  </div>
+						</div>
+					 
+					</div>
+
+					<div class="divider"></div>
+
+				   <!--Industry Data tab-->
+					 <div class="row">
+					   <div class="col-sm-12 text-centre">
+						<p> <h1>Industry Data</h1></p>
+				<br><br>
+						<p>The following is a table of the group members ideal jobs from assignment 1.  
+						We have combined the skills required from the job listings and external sites with burning glass data provided by RMIT. </p> <br>
+						<div class = "gfg"></div>
+						<img src="https://github.com/henry-james-git/forked-a2/blob/main/Burning%20Glass%202.png?raw=true" class = "center2">
+						</div>
+					
+						   <h2><p> Has my opinion changed and why? </h2>
+ 
+
+<h6>Imogen Leaver: Business Analyst </h6>
+ 
+
+My ideal job is considered a hybrid skill set, combining general IT skills with finance, and accounting specific skills. Looking at the Burning Glass data provided, it shows little demand for business analytics, however, with a broader search, I can see great demand for hybrid jobs, which combine ‘traditional’ job sets with IT, data science and analytics. Burning Glass data shows over 1.7 million job advertisements specifying data science skills in 2018 and 617,300 total openings for jobs such as financial analysts and data scientists, so I am confident there is growing demand for my ideal job as a Business Analyst.
+
+ 
+
+<h6>Henry Robinson: Front end developer. </h6>
+
+
+After considering the Burning glass data, I am still very happy with my ideal job. Front end development roles are placed 6th in both occupation and job title jobs data. Specifically, there were 5,990 listings in the occupation listings, which makes me feel very optimistic. The biggest challenge for me will be developing the technical skillset required, as I am very new to coding in general. It is very comforting for me to see that there is high demand, as it only furthers my motivations to attain this kind of work. It’s also worth noting that JAVAscript is the 2nd most required IT skill in the listings, which means there may also be room for crossover into other roles.
+
+ 
+
+<h6>Andrew Rijs: PHP Developer </h6>
+
+ 
+
+Whilst the job listing I pursued is relatively unpopular (24th, 277 Listings), several of the essential skills required are the most common technical skills job advertisements ask for (with SQL in first and JavaScript in second). In addition to these technical skills, the generic skill required (good problem solving) is the second most required attribute in the burning glass analysis. This gives me confidence that if I choose to gain a skillset in these areas, I will be able to find work that fits closely to my initial ideal job. Having had a brief introduction to these languages in previous studies has further informed my decision that this is a path I'd like to go down. 
+
+ 
+
+ 
+
+<h6>Max Torti: Data centre technician. </h6>
+
+ 
+
+ 
+
+Throughout the span of these last few weeks I have been considering my ideal job, I still thoroughly enjoy the idea of working as a data centre technician. The skills needed fit my interests, such as hardware repair, IT computer networking and troubleshooting skills. I have always loved making computers, troubleshooting them and seeing what I can tweak to further improve them (overclocking), I am also eager to learn more about the fields of networks and cybersecurity. Data centre technicians are required to be good with communicating with people, they are expected to give support and educate clients. With all of this in mind I feel that the role of data center technician fits nicely. 
+
+However, after reviewing the burning glass data I have some worries. Burning glass explains data centre technicians as not working a regular 9-5 job, I have no problem with this as of right now, however my opinion might change as life goes on. With this mystery surrounding hours I begin to worry about job security and income. 
+
+ 
+
+<h6>Benjamin Christy: Senior network engineer. </h6>
+ 
+
+After looking at the burning glass data I still consider being a network engineer as my ideal job. 
+
+There are currently 2,478 active job listings and the 5-year projected job growth (according to seek.com.au) is 26.2%. The skills and qualifications for the position also overlap and open up other doors for several different fields in the IT industry. This makes me feel very confident with my career choice and gives me the ability to move around in the industry if I feel like I need to do so. 
+ 
+
+<h6>Liam O'Dell: Cyber Security Specialist </h6>
+
+After looking into the various types of employment in cyber security I would consider Cyber Security Specialist or a similar position my ideal job. As different companies advertise positions with different titles it is hard to compare the positions. It is the industry that entices me so other related positions like Cyber Security Analyst and Cyber Security Engineer also are very attractive options in the future. Out the first 5 active job listings on Seek, all 5 of them list interpersonal or communication skills as the most in demand skill for this job. This gives me confidence that I can continue to work towards this position as the burning glass data suggests that this the top In Demand baseline skill and I work very diligently on having great interpersonal and communication skills. I have always known that my ideal job would be require high levels of communication and think that it is one of my strong suits.
+					
+					   </div>
+					   <div class="col-sm-12">
+				
+					   </div>
+					 </div>
+				   </div> 
+		   </div>
+		 </div>
+	   </div>
+		
+		 </div>
+		 <div class="divider"></div>
+   
+		 <!-- References tab -->
+		 <div class="row">
+		   <div class="col-sm-12 text-centre">
+			 <h1>References</h1>
+		   </div>
+		   <div class="col-sm-12">
+			   <p style="font-size:2vw;">Website Production References</p>
+			 <p>Schools, W., 2020. CSS Height And Width Dimensions. [online] W3schools.com. Available at: https://www.w3schools.com/css/css_dimension.asp [Accessed 5 October 2020].
+				 <br>CodePen. 2020. Parallax Scrolling Website Template. [online] Available at: https://codepen.io/heathriel/pen/eyncz [Accessed 5 October 2020].
+		   <br>Schools, W., 2020. CSS Overflow Property. [online] W3schools.com. Available at: https://www.w3schools.com/cssref/pr_pos_overflow.asp [Accessed 5 October 2020].<br>
+		   <br><p style="font-size:2vw;">cryptocurrency and blockchain references<br></p>
+		   <p>2020. How Does A Blockchain Work - Simply Explained. [online] Available at: <https://www.youtube.com/watch?v=SSo_EIwHSd4&ab_channel=SimplyExplained> [Accessed 12 October 2020].<br>
+ Venafi.com. 2020. 4 Blockchain Uses Besides Cryptocurrency | Venafi. [online] Available at: <https://www.venafi.com/blog/4-new-uses-blockchain-beyond-cryptocurrency> [Accessed 19 October 2020]. <br>
+		   Icaew.com. 2020. History Of Blockchain. [online] Available at: <https://www.icaew.com/technical/technology/blockchain/blockchain-articles/what-is-blockchain/history> [Accessed 9 October 2020]. <br>
+		   Commbank.com.au. 2020. CBA Blocks Credit Card Purchases Of Virtual Currencies. [online] Available at: <https://www.commbank.com.au/guidance/newsroom/virtual-currency-credit-card-block-201802.html> [Accessed 7 October 2020]. <br>
+	   <br>
+	   </p>
+		   </div>
+		 </div>
+   
+			 </div> 
+		<!-- <div class= "footer">
+		   <p>Water Near You - Team Profile</p>
+		 </div>-->
+	   </section>
+		   </footer>		   
+   </body>
+   
