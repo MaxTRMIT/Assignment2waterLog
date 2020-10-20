@@ -14,6 +14,18 @@
 	 margin-left:0px;
 	 margin-right:0px;
    }
+
+   .column {
+  float: right;
+  width: 29%;
+  padding: 0px;
+
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
    
    /* Wrapper for page content to push down footer */
    #wrap {
@@ -25,7 +37,20 @@
 	 /* Pad bottom by footer height */
 	 padding: 0 0 60px;
    }
-   
+   .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  height: 50%;
+}
+.center2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 70%;
+}
    /* Set the fixed height of the footer here */
    #footer {
 	 height: 60px;
@@ -83,8 +108,22 @@
 	   border: #3C7D91 5px double; 
 	  padding: 10px 10px 10px 10px;
 	  overflow-y:scroll;
+	  float:right;
    }
    
+   div.ex2 {
+	   margin:0px auto;
+	   margin-top: 20px;
+	   width: 98%;
+	 height: 300px;
+	   background-color: white;
+	   box-shadow: #000000 1px 0px;
+	   border: #000000 5px double; 
+	  padding: 10px 10px 10px 10px;
+	  overflow-y:scroll;
+	  float:right;
+   }
+
    /* Footer */
    .footer {
 	 position: fixed;
@@ -117,7 +156,6 @@
 		   height: 135px;
 	   }
    }
-   
    section {
 	 color: #ffffff;
 	 min-height: 400px;
@@ -152,19 +190,14 @@
    {
 	 background: #333333;
    }
-   #quote-carousel img
-   {
-	 width: 250px;
-	 height: 100px
-   }
    
    /* Setting the position of the profile pictures */
-   img { 
+   .ProfilePic { 
 			   float: left;  
 			   margin: 5px;
-			   position: relative;
 			   margin-top:50px
    }
+
    /* Setting up names for personal profiles */
    h6 {
 	 font-size:15px;
@@ -172,11 +205,21 @@
 	 vertical-align:top;
    }
    /* Setting the size of the profile pictures */
-   img.PP {
+   .PP {
 	   width: 100%; 
 				   height: 100%; 
 				   object-fit: contain; 
    }
+   .gfg { 
+                width:auto; 
+                text-align:center; 
+                padding:20px; 
+            } 
+            img { 
+                max-width:100%; 
+                        height:auto; 
+            } 
+
    
    /* Small devices (tablets, 768px and up) */
    @media (min-width: 768px) { 
@@ -219,7 +262,7 @@
 	 
 	   <section class="bg-1">
 		   <!--Responsive image/title and description-->
-		   <div> <p class="lead" style="color:black;font-size:80px;"><strong> Water Near You </strong></p>
+		   <div> <p class="lead" style="color:black;font-size:80px;"><strong> waterLog </strong></p>
 			 <p style="color:black;font-size:30px;"> Be informed about the water in your city.</p></h1></div>
 		 </section>
 		 
@@ -229,17 +272,72 @@
 			   <!--Tab to describe/introduce our project-->
 		<h2 style="text-align : center; font-size:5vw;"> <p.l>Our Project</p.l></h2>
 		   </div>
-		   
-		   <p class="lead text-center">
-		   Water is the most critical resource in the world, however due to contamination a large percentage of the worlds population doesn't have access to clean water.
-		   </p>
-		   <p class="text-center">
-		   Water near you aims to inform everyone of the water perameters of their city, we hope to make this data easily accessible for the public at no cost.
+		   <div class="ex2">
+			   <h2>waterLog</h2>
+		   <p.l>
+			<br>waterLog will be an application in which people can obtain certain parameters from water in most main cities in Australia, later this will be increased from not only Australia but to most of the world's countries. These water parameters presented to the user will be derived through the provided tap water for the destination, all data for which will be provided through government and/or official company websites and databases. The end goal for this application is to provide easily accessible data across the world, especially in places that lack clean drinking water. 
+			<br>The parameters that will be provided to the user include general water hardness, PH, chlorine, trace elements and more. These parameters can be helpful for many people from all different walks of life, people with health issues, appliances, professions to fish lovers will find this application helpful.
+			<br>waterLog will source all relevant data listed from the city's water management website, we will compile all the relevant data into a database that is to be implemented into a mobile phone application and website. The data will be presented in the application/website in a clean, professional looking user-oriented design. The focus of these apps is to provide people with data surrounding the water near them, in a fast and easy way to interpret.<br>
+			
+			
+			<br>The motivation behind waterLog came as a result of owning fish, I (Max Torti) had recently gotten into the hobby and needed specific water data. Fish require different water parameters depending on where they are naturally found, for example fish from Africa will require harder and less acidic water. While researching water in my area I had to go through multiple websites and applications to find what was relevant to me, however I still needed to buy a water test kit as I wasn’t familiar nor did I trust some of the data sources I used. waterLog hopes to remove this issue for other members of the public in the same situation, to provide clear data from valid sources such as the government issued water site for each city and state.
+			<br>After studying the data surrounding water myself, I realised that an application that provided this data in an easy to interpret way would be very helpful. 
+			<br>Water, however, isn’t only important to fish keeping. Water is the most important resource to humans; we need it to survive both to drink and eat as most of our food sources rely on water to grow. Due to this it makes waterLog relevant to different professions and needs, professions such as people who deal with hydroponics or choosing what pipes to lay for housing. 
+			<br>People involved with hydroponics may need data surrounding what water they use in their systems, waterLog will be following all relevant posts from the water quality specialists assigned to water management systems across the country, to ensure all of the data we provide to users is accurate and up to date.
+			<br>Water has a lot of beneficial attributes for the human body, such as calcium and magnesium. However, for some kitchen appliances some of these minerals will cause build ups of unwanted gunk, potentially posing health risks or damaging the appliance itself. This is an example of the usefulness of waterLog, as taps/water outlets are susceptible to build up.
+			<br>Certain places in the world don’t offer safe drinking water through taps, providing these places with the data that determines if water is safe is crucial to human survival. Travellers who are visiting new countries might find value in the data we supply, as waterLog will be able to clearly distinguish the quality of water and if it is safe to drink. 
+			<br>For us lucky few who live in cities that offer clean water from the tap, this data can even determine how different the water will taste from city to city (Hardness, PH, Calcium, Magnesium, Sodium and Chlorine can all cause changes in waters taste, colour or even texture).<br>
+			
+			
+			
+			<br>waterLog will be an application and website in which the user either selects what city they live in on a map of Australia or they simply enter the city in the provided box, once they have either selected or written their city the data for that specific area is shown. The map of Australia will be interactive, users can hover over states and get the information they are seeking. Using this interactive map not only looks professional but also makes the data easy to obtain and interpret.
+			<br>In the mobile phone application, we will have the same interactive map however we will add an option for text/voice input. Using text/voice input it furthers the ease of use for the user.
+			<br>Once the application is downloaded to a user’s phone, it will ask permission to obtain the user’s position, using GPS as to address when notification is sent. The user can opt in or out of the GPS, if for example the user opts out, they can manually set their city/destination via text or speach or just leave it blank. The notifications will be sent whenever there is a change in the water quality, water containment and delivery infrastructure or contaminations in the user’s area. 
+			<br>Notifications will be sent depending on the user's location, as the notifications will be surrounding changes to the user’s water management system of their city/state. If the user doesn’t enter their destination or enable GPS, the notifications will not be sent, however they can view all notifications in the app itself under the “notifications” tab.
+			<br>The tools needed to create both the mobile phone app and the website are as follows:
+			<br>•	A computer capable of running a programming encoder with access to the internet.
+			<br>•	HTML
+			<br>•	CSS
+			<br>•	Java
+			<br>•	JavaScript<br>
+			<br>Potential tools needed in creation of waterLog:
+			<br>•	MySQL
+			<br>•	Python
+			<br>•	Swift
+			<br>The main skills required for constructing waterLog is programming, due to our project being completely software related there is little else needed. Knowledge in multiple different programming languages will be needed, HTML/CSS will be used to create the website, Java will be used to make the mobile phone application (for devices running Android)and JavaScript will be used to make the interactive map. 
+			<br>Other programming languages may be needed for the creation of waterLog, MySQL may be needed to create a database in which all of the data is stored, Python may be needed to further extend the capabilities of the app and interactive map and Swift may be needed to create a version of the app for devices running IOS operating system.<br>
+			
+			
+			
+			<br>In the initial proposal for waterLog (or “Water Near You”, as it was called) the application was to use user entered data, with the user entered data it would calculate the mean and present that to new users. However, it was later discovered that this was not favourable as it relied too much on the user. Due to that it was decided to obtain the relevant data ourselves, to do so we will source it from sites such as: https://www.melbournewater.com.au/water-data-and-education/water-facts-and-history/why-melbournes-water-tastes-great/testing-water 
+			<br>PDF’s can be found that supply the data needed from a credible source, one such PDF is entitled “Water Quality Annual Report 2018-19".
+			<br>In response to the feedback from assignment 1, we will source the data ourselves, rather than relying on members of the public who use the waterLog to provide the data themselves. This feedback was completely understandable and greatly appreciated, as this means we won’t need to rely on the users to conduct any tests themselves. Outsourcing all the data further improves the ease of use for users, ensures the promotion of valid information and limits the size of database needed to run the application.
+			<br>The intended outcome of the application and website will be an interactive map in which when the user hovers over a city in Australia, the data surrounding that city comes up in a text box. People using the Android app will be able to receive notifications on changes to their city’s water management system. As stated before, the data will be sourced from the city's water management/storage website, as to ensure the data is valid and relevant to current times.
+			<br>The data in which we will provide to users will contain most if not all of the following (depending on the recent testing of water supply):
+			<br>•	PH
+			<br>•	Colour (Pt/Co)
+			<br>•	Iron
+			<br>•	Manganese
+			<br>•	Fluoride
+			<br>•	Calcium
+			<br>•	Hardness
+			<br>•	Magnesium
+			<br>•	Nitrate
+			<br>•	Alkalinity
+			<br>We believe these are the most relevant elements to be derived from water, most water based activities or problems depend on the listed elements.<br>
+			
+			
+			
+			<br>waterLog’s main objective is to inform the public with valid data surrounding the water provided to them from their tap. waterLog initially will only provide information regarding main cities in Australia, however we hope to eventually branch it out into most countries of the world. waterLog can be extremely beneficial in countries that lack clean drinking water, as it can help to determine where people can obtain safe drinking water.
+			<br>waterLog is beneficial to fish keepers as each species of fish require specific parameters, such as hardness and PH. Every water supply across the world can differ in parameters, some examples extremely. Due to this it is important for the fish owner to choose what species they decide, depending on what water is available to them. You can alter water PH/hardness however to do so it can be very expensive, and you may need to add chemicals.
+			<br>Due to the importance of water in every human's life, having that information at the simple click of a button is very helpful. No matter the reason may it be health, work or leisure this project works into many markets. With this huge potential of influence and water being a resource that literally every human must encounter daily, waterLog is very relevant, practical and monetizable.
+			
 	   
-		   </p>
+		</p.l>
+		</div>
 		 </div>
 	   </div>
-		  
+
 	   <div class="container" id="section3">
 			 <div class="container">  
 		  <div class="row">
@@ -252,6 +350,7 @@
 				   
 					 <div class="row">
 					   </div>
+					   <div class="divider"></div>
 						   <!--Tab to further elaborate on our project-->
 						 <h1><p.l>Project Objective</p.l></h1>
 				
@@ -280,116 +379,221 @@
 					   </div>
 					   <!--Personal Profiles-->
 					   <!--Liam's tab-->
-						   <h6><br>Liam O'Dell</h6>
-						   <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="ProfilePicture">
-						   <div class="ex1">
-							   S3879123
-I was born in rural NSW and moved to Sydney when I was 18 years old. I am currently employed as a Coach and Administrative Officer at a Martial Arts Academy on Sydney’s North Shore. I graduated from South Grafton High School in 2013. I am currently enrolled in an IT degree at RMIT university and am studying via Open University. As well as work and education I compete in Muay Thai Kickboxing, Submission Grappling and Folkstyle Wrestling Competitions at both regional and state levels.
-From making video games to website and app design, I have been tinkering with aspects of IT since my family got its 1st computer in 2004. Now as an adult I have started this degree to learn more about technology. The parts of Information Technology that interest me are mainly cyber security, application design and sharing Technology with the world. I am passionate about making the world a better place through the tools that Information Technology supplies us.
-						   </div>
-						   <!--Imogen's tab-->
-						   <h6><br><br>Imogen Leaver</h6>
-						   <img src="https://raw.githubusercontent.com/MaxTRMIT/Assignment2waterLog/main/Profile%20PhotoC.jpg" class="PP" alt="ProfilePicture">
-						   <div class="ex1">
-							   <h2 style="color:powderblue;">About Me</h2>   
-							   <p.l style="font-family:courier;">RMIT Student Number: s3667801.</p.l>
-								 <p.l style="font-family:courier;">My name is Imogen Leaver, I am Australian born, of English, Irish and Scottish decent.</p.l>
-							   <p.l style="font-family:courier;">I only speak English, however my sister-in-law is half Peruvian, and is determined to teach me Spanish.</p.l>
-							   <p.l style="font-family:courier;">I am currently completing a Bachelor of Business – Financial Planning, having gained recognition of prior learning from a Diploma in Business.</p.l>
-							   <p.l style="font-family:courier;">I love riding my bike, going to the beach, travelling (on hold thanks to COVID), my family and considering the environment.</p.l>
-							   <br>
-							   
-								<h2 style="color:powderblue;">Interest in IT</h2>
-							   <p.l style="font-family:courier;">This IT unit is a core subject in my business degree, running two business, I completely appreciate why IT is essential to understanding and learning about business. It is the platform on which we communicate, manage eCommerce, accounting, taxation, and advertise and market our business.</p.l>
-							   <p.l style="font-family:courier;">I am currently in the process of creating an ecommerce website, it has shown me how ignorant I was about IT (and how fundamental it is to modern business). I am keen to learn more through this course, if not to sound less ignorant, to be more self-sufficient with managing this side of business.</p.l>
-							   <p.l style="font-family:courier;">I arrived at RMIT because it offered the specific degree I was after, my key interest is business, specifically the financial planning aspect (of life & business). Other universities offer similar commerce, accounting, finance, and business degrees, however not with the financial planning angle.</p.l>
-							   <p.l style="font-family:courier;">I only have 6 subjects left to complete my degree, I have learnt so much thus far and expect to expand my knowledge of financial and accounting compliance, wealth creation and management, and of course IT!</p.l>
-							   <br> 
-								 <h2 style="color:powderblue;">IT Experience</h2>
-							   
-							   <p.l style="font-family:courier;">I am currently completing a business degree, analysing business to improve efficiency and profitability is what I am passionate about.</p.l> 
-							   <p.l style="font-family:courier;">I have worked in senior business roles for over a decade, I have experience managing teams, liaising with all levels of business support and management, improving business procedures and profitability and as mentioned above, I am currently in the last stages of completing a business degree (majoring in financially planning), which will solidify and streamline my business experience. I certainly could expand my knowledge in IT (which at present is reasonably basic), it is an area where I have previously relied on expert team members and departments to support me. I am hoping this unit in addition to further hands on experience, especially in the technical side of IT will improve my competency and eligibility for employment positions such as this.</p.l>
-							   <br>
-						   </div>
-						   <!--Andrew's tab-->
-						   <h6><br><br>Andrew Rijs</h6>
-						   <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="ProfilePicture">
-						   <div class="ex1">
-							   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-   
-							   Why do we use it?
-							   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-							   
-							   
-							   Where does it come from?
-							   Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-							   
-							   The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-							   
-							   Where can I get some?
-							   There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the 	
-						   </div>
-						   <!--Henry's tab-->
-						   <h6><br><br>Henry Robinson</h6>
-						   <img src="https://raw.githubusercontent.com/MaxTRMIT/Assignment2waterLog/main/Henry.jpg" class="PP" alt="ProfilePicture">
-						   <div class="ex1">
-							   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-   
-   Why do we use it?
-   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-   
-   
-   Where does it come from?
-   Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-   
-   The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-   
-   Where can I get some?
-   There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the 
-						   </div>
-						   <!--Benjamin's tab-->
-						   <h6><br><br>Benjamin Christy</h6>
-						   <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="ProfilePicture">
-						   <div class="ex1">
-							   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-   
-   Why do we use it?
-   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-   
-   
-   Where does it come from?
-   Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-   
-   The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-   
-   Where can I get some?
-   There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the 
-						   </div>
-						   <!--Max's tab-->
-						   <h6><br><br>Max Torti</h6>
-						   <img src="https://user-images.githubusercontent.com/70696652/93361356-1f254b80-f888-11ea-9a5b-36b90355d2bc.jpg" class="PP" alt="ProfilePicture">
-						   <div class="ex1">
-							   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-   
-   Why do we use it?
-   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-   
-   
-   Where does it come from?
-   Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-   
-   The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-   
-   Where can I get some?
-   There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the 
-						   </div>
+					   <h6><br>Liam O'Dell</h6>
+					   <img src="https://user-images.githubusercontent.com/70696652/96581094-a731c180-131c-11eb-8f43-788ac3d5a60d.jpg" alt="ProfilePicture" height="50%" width="200">
+					   <div class="ex1">
+							<h3>about me</h3><br>
+						 My student number is S3879123. I was born in rural NSW and moved to Sydney when I was 18 years old. I am currently employed as a Coach and Administrative Officer at a Martial Arts Academy on Sydney’s North Shore. I graduated from South Grafton High School in 2013. I am currently enrolled in an IT degree at RMIT university and am studying via Open University. As well as work and education I compete in Muay Thai Kickboxing, Submission Grappling and Folkstyle Wrestling Competitions at both regional and state levels. 
+						 <br>
+						 <h3>Interest in IT </h3><br>
+						 From making video games to website and app design, I have been tinkering with aspects of IT since my family got its 1st computer in 2004. Now as an adult I have started this degree to learn more about technology. The parts of Information Technology that interest me are mainly cyber security, application design and sharing Technology with the world. I am passionate about making the world a better place through the tools that Information Technology supplies us. 
+						  <br> 
+						  <h3>IT Experience</h3><br>
+						  As a student that is studying IT via distance education, i have grow to understand how important that understanding developing technologies and be up to date on the administrative and communication tools that make up part of the IT world. I have been working with Technology from an Administrative perspective for 10 years now. I have worked in multiple industires while working administartion and there is always a requirement to grow and learn as the technology does. 
+					  </div>
+					   </div>
+					   <div class="divider"></div>
+					   <div class="row::after">
+						<div class="column">
+						  <img src="https://user-images.githubusercontent.com/70696652/96581487-3b9c2400-131d-11eb-8fe4-0ffe7fb7919e.png" alt="LiamPersonalityImage1" width="300" height="500">
+						</div>
+						<div class="row::after">
+						<div class="column">
+						  <img src="https://user-images.githubusercontent.com/70696652/96581445-2921ea80-131d-11eb-8182-1a11f33f51c7.png" alt="LiamPersonalityImage2" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="row::after">
+						<div class="column">
+							<img src="https://user-images.githubusercontent.com/70696652/96581387-17404780-131d-11eb-86c0-ac75f5a3e4ed.png" alt="LiamPersonalityImage3" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <!--Imogen's tab-->
+					   <h6><br><br>Imogen Leaver</h6>
+					   <img src="https://raw.githubusercontent.com/MaxTRMIT/Assignment2waterLog/main/Profile%20PhotoC.jpg" height="200" width="200" alt="ProfilePicture">
+					   <div class="ex1">
+						<h3>about me</h3><br>
+						<p.1>RMIT Student Number: s3667801. 
+
+							<br>My name is Imogen Leaver, I am Australian born, of English, Irish and Scottish decent.</p.l> 
+						 
+						  
+						 
+							<p.1>I only speak English, however my sister-in-law is half Peruvian, and is determined to teach me Spanish.</p.l> 
+						 
+						  
+						 
+							<p.1>I love riding my bike, going to the beach, travelling (on hold thanks to COVID), my family and considering the environment.</p.l> 
+						 
+						  
+								<h3>Interest in IT </h3>
+							<p.1>I am currently completing a Bachelor of Business – Financial Planning, which includes this IT unit. IT is an essential part of modern-day business, arguably it is impossible to run a business in today’s world without some form of IT interest, experience, or use.</p.l> 
+						 
+						  
+								<h3>IT Experience</h3>
+							<p.1>I have worked in senior business roles for over a decade and have experience managing teams and improving business procedures and profitability. I certainly could expand my knowledge in IT (which at present is reasonably basic), it is an area where I have previously relied on expert team members and departments to support me</p.l> 
+					   </div>
+					   <div class="divider"></div>
+					   <div class="row::after">
+						<div class="column">
+						  <img src="https://user-images.githubusercontent.com/70696652/96584850-2675c400-1322-11eb-878b-dce41db1bcf4.PNG" alt="ImogenPersonalityImage1" width="300" height="500">
+						</div>
+						<div class="row::after">
+						<div class="column">
+						  <img src="https://user-images.githubusercontent.com/70696652/96584805-178f1180-1322-11eb-9fac-9606e811875e.PNG" alt="ImogenPersonalityImage2" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="row::after">
+						<div class="column">
+							<img src="https://user-images.githubusercontent.com/70696652/96584764-08a85f00-1322-11eb-9364-553a9044e830.PNG" alt="ImogenPersonalityImage3" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <!--Andrew's tab-->
+					   <h6><br><br>Andrew Rijs</h6>
+					   <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"  height="200" width="200" alt="ProfilePicture">
+					   <div class="ex1">
+						   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+						   Why do we use it?
+						   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+						   
+						   
+						   Where does it come from?
+						   Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+						   
+						   The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+						   
+						   Where can I get some?
+						   There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the 	
+					   </div>
+					   <div class="divider"></div>
+					   <div class="row::after">
+						<div class="column">
+						  <img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="AndrewPersonalityImage1" width="300" height="500">
+						</div>
+						<div class="row::after">
+						<div class="column">
+						  <img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="AndrewPersonalityImage2" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="row::after">
+						<div class="column">
+							<img src="https://yandillarose.com.au/wp-content/uploads/2018/10/img-placeholder.png" alt="AndrewPersonalityImage3" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <!--Henry's tab-->
+					   <h6><br><br>Henry Robinson</h6>
+					   <img src="https://raw.githubusercontent.com/MaxTRMIT/Assignment2waterLog/main/Henry.jpg" height="200" width="200" alt="ProfilePicture">
+					   <div class="ex1">
+						<h3>about me</h3><br>
+                        <p.l> RMIT Student Number: s3872400. My name is Henry Robinson. Raised in Canberra, I moved to Melbourne in 2011 and quickly became an active part of the music scene. I enjoyed almost 10 years of touring and recording before covid hit in 2020, including playing some great festivals like Bluesfest, Party in the Paddock and WOMADelaide.
+                         <br>
+                         <h3>Interest in IT </h3><br>
+                         2019 brought with it my first child and my 30th birthday, which made me consider a new career path for some stability and longevity. IT has always been a great interest to me, so it seemed to be a natural choice. I have spent a lot of time using technology in my live  music set up, and I am more than eager to be on the other side of the fence. At present, I am interested in following a path to becoming a Front End Developer, but I am open to that changing as this journey unfolds.
+                          <br> 
+                          <h3>IT Experience</h3><br>
+                        Professionally, I am new to this field. 
+					   </div>
+					   <div class="divider"></div>
+					   <div class="row::after">
+						<div class="column">
+						  <img src="https://user-images.githubusercontent.com/70696652/96585967-a81a2180-1323-11eb-88b5-ee3a4f9525ae.png" alt="HenryPersonalityImage1" width="300" height="500">
+						</div>
+						<div class="row::after">
+						<div class="column">
+						  <img src="https://user-images.githubusercontent.com/70696652/96585903-933d8e00-1323-11eb-9723-e79d7deb2ef0.png" alt="HenryPersonalityImage2" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="row::after">
+						<div class="column">
+							<img src="https://user-images.githubusercontent.com/70696652/96585839-7739ec80-1323-11eb-9366-2aeb7c59a88d.png" alt="HenryPersonalityImage3" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <!--Benjamin's tab-->
+					   <h6><br><br>Benjamin Christy</h6>
+					   <img src="https://raw.githubusercontent.com/MaxTRMIT/Assignment2waterLog/main/benchristy.jpeg"   height="200" width="200" alt="ProfilePicture">
+					   <div class="ex1">
+						<h2>About Me</h2>
+						<p.1>Student Number: 3879736<br>Email: s3879736@student.rmit.edu.au</p>
+						<p.1>I am a 90s kid born and reside in South Australia. <br>
+						I do have a Viking background and I only speak english in my home.<br>I love messing around with Linux and virtual machines and have a 11y/o fur baby called clue.</p> 
+						<h2>What is my interests in IT?</h2>
+						<p.1>My interest in IT has always been in the communication side of things (networking). I am fascinated on how many different forms of communication there are now. Whether it’s basic Wi-Fi, to running several VLAN’s on a large network, I love how data is transferred and how we secure it. We have become so dependent on it now cybersecurity and network professionals are needed more than ever and I am lucky enough that it is where I feel like I am most suited.</p>
+						<h2>Why did I choose RMIT?</h2>
+						<p.1>I choose to come to RMIT because they had the course I needed to complete to get into my bachelors in IT which is specializing in networking and cybersecurity through Uni SA</p>
+						<h2>do I expect to learn through my studies?</h2>
+						<p.1>I expect to learn the basics of IT and gain a better understanding of the field I am going into as well as gaining knowledge and some experience to excel in my chosen field. And help me push f orward in my career.</p>
+
+					   </div>
+					   <div class="divider"></div>
+					   <div class="row::after">
+						<div class="column">
+						  <img src="https://raw.githubusercontent.com/MaxTRMIT/Assignment2waterLog/main/bcBig5Test.jpg" alt="BenPersonalityImage1" width="300" height="500">
+						</div>
+						<div class="row::after">
+						<div class="column">
+						  <img src="https://raw.githubusercontent.com/MaxTRMIT/Assignment2waterLog/main/bcLearningStyle.jpg" alt="BenPersonalityImage2" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="row::after">
+						<div class="column">
+							<img src="https://raw.githubusercontent.com/MaxTRMIT/Assignment2waterLog/main/bcMyers.jpg" alt="BenPersonalityImage3" width="300" height="500">
+						</div>
+					   </div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <div class="divider"></div>
+					   <!--Max's tab-->
+					   <h6><br><br>Max Torti</h6>
+					   <img src="https://user-images.githubusercontent.com/70696652/93361356-1f254b80-f888-11ea-9a5b-36b90355d2bc.jpg" height="200" width="200" alt="ProfilePicture">
+					   <div class="ex1">
+						<h2>Max Torti</h2>
+						<br>s3871671
+						<br>S3871671@student.rmit.edu.au
+						<div class=”divider”></div>
+						
+						<h2>About Me:</h2>
+						<br>I am from Gold Coast Australia, born 2003 and have completed a certificate 3 in tourism and grade 10. One fact about myself is that when I was 15, I made a bitcoin mining machine, using 2 rx 570 graphics cards and a second hand motherboard, cpu, ram and powersupply. Mining rigs are getting less and less viable, so once the rig’s profitability dropped, I dismantled it and used the parts in desktop PC’s. However even though I didn’t mine for long, it really pushed my interest in IT to the next level.
+						<h2>Interest In IT:</h2>
+						<br>I have knowledge in Java, MySQL, and I know a little HTML/CSS. I am planning on learning Javascript and Python in the future. With this knowledge both now and soon to be learnt, I am most interested in data centres for my future job, I feel that as our world has accepted technology and the population keeps growing, Data management is a field that will be in high demand.
+						<h2>IT Experience:</h2>
+						<br>I don’t have any professional experience in the IT field yet, however I have assembled computers for friends for a profit.<br>
+					   </div>
+					</div>
+					<div class="divider"></div>
+					<div class="row::after">
+					 <div class="column">
+					   <img src="https://user-images.githubusercontent.com/70696652/93517247-861d3000-f96e-11ea-9f63-1bab67cabc78.PNG" alt="MaxPersonalityImage1" width="300" height="500">
+					 </div>
+					 <div class="row::after">
+					 <div class="column">
+					   <img src="https://user-images.githubusercontent.com/70696652/96587042-288d5200-1325-11eb-9949-a89df574c783.PNG" alt="MaxPersonalityImage2" width="300" height="500">
+					 </div>
+					</div>
+					<div class="row::after">
+					 <div class="column">
+						<img src="https://i.pinimg.com/originals/3e/cd/a7/3ecda7537d603bb8a783fb485dc7b00c.png" class = "ProfilePic" alt="MaxPersonalityImage3" width="300" height="500">
+					 </div>
+					</div>
+				   </div>
+				   <div class="divider"></div>
+				   <div class="divider"></div>
+				   <div class="divider"></div>
 						 <!--Team Profile-->
 						   <p><h1><br><br>Team Profile</h1></p>
 						  
-						   <div class="ex1">
-
-
-<p.l>Our team has taken various personality tests to help indicate how we will function together .
+<br><p.l>Our team has taken various personality tests to help indicate how we will function together .
 
 					<p.l>A Myers-Briggs test by 16 Personalities reveals that we have a Protagonist, an Architect, a Logician, a Virtuoso and two Mediators. 
 					With this information, we can speculate on how the group may function as the project unfolds. <br><br>
@@ -415,18 +619,20 @@ From making video games to website and app design, I have been tinkering with as
 				   
 				 </div>
    
-				 <div class="divider"></div>
-   
 				 <div class="item">
-   
 					 
 					   </div>
 					 </div>
 				  
 				 </div>
-   
 				 <div class="divider"></div>
-   
+					 <!--Tools Tab-->
+				 <h1>Tools </h1><br> 
+
+<p1>The applications and tools that Team WaterLog used in this assignment are Microsoft Teams, Git-Hub, Git-Hub CMD, Notepad++, TextEdit, Sublime text and Visual Studio. We used Microsoft Teams to record our meetings, communicate in-between them and share files with each other. Git-Hub was the platform that was used to host our website. We each had our own preference of software to write our code. For example, Liam used Notepad++ whereas Max used Visual Studio. The first few commits were mainly used for the formatting and overall skeleton of the website. As we started adding content, we ended up overriding each other. This caused us to research further into Git-Hub and develop a general understanding of how platform works. As you can see by our later commits as they are done by our group moderator, Max. </p1>
+					 
+				 <div class="divider"></div>
+					 
 				 <div class="item">
    <h2 style="text-align : center; font-size:5vw;"> <p.l>IT Technologies.</p.l></h2>
 				<h1>Clouds, Services and Servers</h1>
@@ -434,31 +640,146 @@ From making video games to website and app design, I have been tinkering with as
 					   </div>
 					   <div class="col-sm-12">
 						<div class="col-sm-12">
-						   <h2>What does it do?</h2>
-						 <p.l>Cloud computing has been around for 20 years or so, it is an operational technology used for a plethora of purposes.
-						 Clouds are communal resources (computers, applications, storage systems and services) where data is stored on another computer. Clouding computing is essentially outsourcing or centralising servers to facilitate access from anywhere and eliminating restrictions to a location, for example, a cloud host for a website allows everyone in the world to access the website from any device.
-						Cloud computing also offers additional security features and provides for automatic maintenance and updates, generated remotely, and uploaded to your devices upon authorisation.
-						   <h2>What can be done now?</h2>
-						 Today there are three main types of cloud computing, Public, Private and Hybrid:
-						  Public clouds are owned and managed by a cloud provider, who delivers services to a customer via an online account. All hardware, software and infrastructure is managed by a third-party.
-						  Private cloud services are wholly owned and utilised by an organisation, the hardware can either be located onsite or offsite (supplied by a third-party host). The services and infrastructure are managed on an exclusive network.
-						   Hybrid clouds are a combination of both private and public clouds, where data and applications are pooled between both clouds. Its offers flexibility and utilises existing infrastructure, security, and compliance.
-						   There are also three main types of cloud services:>
-						   Software as a Service, aka SaaS, is a service which delivers software applications over the internet. The software provider hosts, manages, and maintains the application and all underlying infrastructure. It is generally hired on a subscription basis and connected via an account over the internet.
-						   Platform as a Service, aka PaaS, provides a platform for developing, testing, delivering, and managing software applications. The user, usually a developer, pays for the hired use of the infrastructure, storage, network, and database to develop.
-						   Infrastructure as a Service, aka IaaS, is as basic as cloud computing goes, you rent infrastructure (servers, virtual machines, storage, networks, operating systems) from the provider and pay on demand.
-						   <h2>What is likely to be done soon?</h2>
-						   In the next few years, almost all computing will be done via cloud. Cloud computing is built for automation, so can merge with legacy, current and new technologies to create an efficient, dynamic system.
-						   A future focus on better cohesion with legacy systems will allow businesses with complex and ridged operating structures to transfer to a cloud-based operating system more easily.
-						   Micro data centres are gaining traction, these compact units are located close to devices (which requires less bandwidth), where they perform certain tasks previously performed by large data centres.
-						   Microsegmentation is an emerging software method used for data security, it creates an isolated ‘secure zone’ in a data centre, minimising the breadth and impact of a security breach.
-						   With the increased need for data comes the increased need to deliver data faster, Non-Volatile Memory Express (NVMe) is a storage protocol which accelerates the transfer of information between systems, drastically enhancing data relocation.
-					 <div class="row">
+							<h2>What does it do?</h2> 
+
+							<h3>What is the state of art of this technology?</h3> 
+						  
+						   <p.l>Cloud computing has been around for 20 years or so, it is an operational technology used for a plethora of purposes.</p> 
+						  
+						   <p.l>Clouds are communal resources (computers, applications, storage systems and services) where data is stored on another computer. Clouding computing is essentially outsourcing or centralising servers to facilitate access from anywhere and eliminating restrictions to location, , ‘a cloud host for a website allows everyone in the world to access the website from any device’ (Sharma, 2018).</p> 
+						  
+						   <p.l>Cloud computing also offers additional security features and provides for automatic maintenance and updates, generated remotely, and uploaded to your devices upon authorisation.</p> 
+						  
+							 <h3>What can be done now?</h3> 
+						  
+							 <p.l>Today there are three main types of cloud computing, Public, Private and Hybrid:</p> 
+						  
+							 <p.l>Public clouds are owned and managed by a cloud provider, who delivers services to a customer via an online account. All hardware, software and infrastructure is managed by a third-party.</p> 
+						  
+							 <p.l>Private cloud services are wholly owned and utilised by an organisation, the hardware can either be located onsite or offsite (supplied by a third-party host). The services and infrastructure are managed on an exclusive network.</p> 
+						  
+							 <p.l>Hybrid clouds are a combination of both private and public clouds, where data and applications are pooled between both clouds. ‘It offers flexibility and utilises existing infrastructure, security, and compliance’ (What is Cloud Computing?, 2020).</p> 
+						  
+							 <p.l>There are also three main types of cloud services:</p> 
+						  
+							 <p.l>Software as a Service, aka SaaS, ‘is a service which delivers software applications over the internet’ (What is Cloud Computing?, 2020). The software provider hosts, manages, and maintains the application and all fundamental infrastructure. It is generally hired on a subscription basis and connected via an account over the internet.</p> 
+						  
+							 <p.l>Platform as a Service, aka PaaS, provides a platform for ‘developing, testing, delivering, and managing software applications’ (What is Cloud Computing?, 2020). The user, usually a developer, pays for the hired use of the infrastructure, storage, network, and database to develop.</p> 
+						  
+							 <p.l>Infrastructure as a Service, aka IaaS, delivers ‘rental infrastructure (servers, virtual machines, storage, networks, operating systems)’ (What is Cloud Computing?, 2020), paid for on demand.</p> 
+						  
+							 <h3>What is likely to be done soon?</h3> 
+						  
+							 <p.l>In the next few years, almost all computing will be done via cloud. Cloud computing is built for automation, so can merge with legacy, current and new technologies to create an efficient, dynamic system.</p> 
+						  
+							 <p.l>Better cohesion with legacy systems will allow businesses with complex and ridged operating structures to transfer to a cloud-based operating system more easily.</p> 
+						  
+							 <p.l>Micro data centres will continue to gain traction, these compact units are located close to devices (requiring less bandwidth), completing tasks previously performed by large data centres.</p> 
+						  
+							 <p.l>Microsegmentation, a software method used for data security, will continue to emerge. It creates an isolated ‘secure zone’ in a data centre, minimising the breadth and impact of a security breach.</p> 
+						  
+							 <p.l>Non-Volatile Memory Express (NVMe) will answer our increasing need for data and download speed. ‘It is a storage protocol which accelerates the transfer of information between systems, drastically enhancing data relocation’ (Kerravala, 2017).</p> 
+						  
+							 <h3>What technology or other developments make this possible?</h3> 
+						  
+							 <p.l>Cloud computing is done via software control and the internet, the internet is the main ‘connector’, used to transfer information and store data. Cloud computing is a more advanced way to command computers and supports greater proficiency in operations.</p> 
+						  
+							 <p.l>Server Virtualization is another important technology in cloud computing, layers of software are put between your computer’s hardware to run multiple operating systems, creating a fake, virtual environment. Virtual Machines are great for experimenting with new software or testing for malware as it enables the entire virtual machine to be deleted without affecting the existing operating system. It also allows for easy backing up.</p> 
+						  
+						   <p.l>Data centres range from enormous warehouses, accommodating rows upon rows of servers, a building which is either utilised by one company or co-leased by several, to a small cupboard office space. The more advanced centres are designed for maximum security, multi-level back-up, survival (from a power outage to a natural disasters), and to be run economically and environmentally (some even boast neutral carbon offsets). Their creation has secured our data storage ability.</p> 
+						  
+						   <h2>What is the likely impact?</h2> 
+						  
+							<h3>What is the potential impact of this development?</h3> 
+						  
+							 <p.l>With cloud computing, there is no longer a need to wait for hardware to be delivered, incorrect cables needing to be returned, a cloud provides instant access, and generally free online step-by-step instructions for use. You can ‘pay as you go’ using monthly subscriptions and do not need room to store bulky hardware. Moving data is also no longer a slow process, requiring a lot of bandwidth and human injection.</p> 
+						  
+							 <p.l>It is important to note, transition to cloud computing for businesses must be well planned to be successful. The transition often experiences trials which, without proper management can be costly in both time and money. Improper utilisation can also reduce effectiveness, so planning and execution is vital.</p> 
+						  
+							<h3>What is likely to change?</h3> 
+						  
+							 <p.l>Cloud computing is becoming the new business standard, businesses big and small are increasingly becoming aware of its many benefits. The future will be one where there is less reliance on human aptitudes and more focus on resourceful technologies.</p> 
+						  
+							 <p.l>Cloud computing is designed to expand with demand and offer agility. It has already become accessible and affordable to individuals and business alike through a variety of packages and services. Expectantly as the technology advances further, so too will its affordability, reliability, efficiency, and security.</p> 
+						  
+							<h3>Which people will be most affected and how?</h3> 
+						  
+							 <p.l>Individuals have an entire world of accessibility available to them, storing photos, maintaining records with the assistances of expert software, communicating instantly and streaming entertainment on demand.</p>  
+						  
+						  <p.l>Education has seen great adaption, ‘students can now access educational or operational applications without restraint and with high speed and accuracy, their teachers can then collaborate with them in program deployments’ (Sharma, 2018).</p> 
+						  
+							 <p.l>Healthcare use cloud computing to analyse live data ‘to assist in creating and specifying treatment options for diseases or illnesses’ (Sharma, 2018).</p>  
+						  
+							 <p.l>Business has been greatly influenced; time, cost, and security are the most common challenges for business. Cloud managed services offer improved efficiency, security, compliance, and productivity.</p>  
+						  
+							 <h3>Will this create, replace or make redundant any current jobs or technologies?</h3> 
+						  
+							 <p.l>Cloud computing has seen a decline in on-premises data storage and engineering. Potentially reducing the need for jobs such as network engineers. It has however, seen the creation of new employment opportunities, perpetual innovation, adaptation and transitioning to meet and fulfill data and systems demand will require specialised skills, jobs such as Solutions Architect and Systems Administrator will most likely thrive.</p> 
+						  
+							 </p>Virtualization has had a particular impact on data traffic, cementing the continued growth of data centres and its subsequential job growth, for example Systems Engineering and Net Development are fast growing employment prospects.</p> 
+						  
+						   <h2>How will it affect you?</h2> 
+						  
+							<h3>In your daily life, how will this affect you?</h3> 
+						  
+						   <p.l>Personally, cloud, server and services innovation has simplified, made more accessible and enhanced daily life. From storing (and backing up) photos of my growing family, special events (even scanning children’s artwork rather than keeping a cupboard full), to allowing me to watch movies on demand (no more ad breaks, missing the start of the movie). A paper-free world is also on offer, digital certificates, information sheets, receipts uploaded to cloud storage, or a software program sees significant paper reduction.</p> 
+						  
+						  <h3>What will be different for you?</h3> 
+						  
+						   <p.l>For business use, I have experienced increased efficiency and better record keeping. I remember the days when I had to keep a filing cabinet of paper receipts, I had to manually enter the receipts into an accounting system and then try to match it with the end of month figure in the bank account. Searching for and auditing receipts was done manually (and hurt your back from crouching over the filing cabinet for hours). Now, software is linked directly to the business bank account where it pre-empts accounting categories for reconciliation. Scans or downloaded receipts are linked to each bank entry and voila, the work is done! To search for an entry, simply type in the name or amount and within seconds suggestions are presented for you to choose.</p> 
+						  
+						   <h3>How might this affect members of your family or your friends?</h3> 
+						  
+						   <p.l>Our ability to communicate, share content is so much easier. I have friends around the world, in differing time zones, sharing our lives via text, photos and video is simple and instant – and all done on a phone. My best friend moved to Queensland when I was a teenager, I remember having to send letters and printed photos to her via post, it would take days, even weeks to reach her. Now our communication is instant and in real time.</p> 			  
+						   </div> 	  
+						   </div> 
+						   <div class="divider"></div>
+						   <div class="row">
 					   <div class="col-sm-12 text-centre">
 						<p> <h1>Cybersecurity.</h1></p>
 					   </div>
 					   <div class="col-sm-12">
-						 <p.l>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p.l>
+					   	<p.1>
+						 <h2>What Does Cyber Security Do?</h2>
+						 <p.1>Cyber Security is the practice of protecting systems, programs and networks from digital attacks and unauthorized access. Basically protecting our digital online life, it’s like a locksmith putting a lock on a door their task is to protect whatever’s inside. Cyber Security is essentially the same but in the virtual world.</p>
+						 <h2>What is the current state of cyber security?</h2>
+<p.1>Well that is kind of hard to say right now, with the current world issue (Covid 19 pandemic) there has been an increase of remote working and also for a lot of companies, reduced cyber security budgets.
+Many companies have changed the way they operate as a result of the pandemic. With 30% of respondents confirming that they have been operating with a remote workforce, this has become a stress test for cybersecurity processes. Because of this 14% of organizations have said they revised their cybersecurity concepts, and only 7% have said that their strategy was sufficient during the pandemic. 
+Unsurprisingly the increase of remote workers drove up the number of OT network scan attempts during the pandemic and because of this a lot of companies realized the need to supplement cybersecurity procedures to combat this.
+What can be done now in cyber security?</p>
+<h3>Developing Cyber security talent is essential</h3>
+<p.1>With cyber attacks growing more frequent every year, a lot of companies are having to spend more on protecting themselves, the problems is there is actually an enormous shortage of workers with adequate infosec skills at the moment. 
+A study by the Global Information Security Workforce estimated that by 2022 the gap between open positions and qualified personnel will widen by almost two million jobs.
+We need more qualified and experienced people in this industry.
+<h3>Older Legacy tech is still an issue</h3>
+Do you remember the 2017 WannaCry ransomware attack? It infected over 200,000 computers running older versions of Windows in 150 countries. 
+Legacy systems present a major cybersecurity risk.
+The main reason for this is there is little motivation for manufactures to continue releasing security patches for out of date systems, even when new vulnerabilities appear. The other problem is with legacy dependencies, where a secondary piece of legacy tech can’t be run without a legacy piece of hardware or tech which introduces its own securities vulnerabilities.
+Even with new security vulnerabilities coming to light, companies around the world continue to expose themselves to cyber risks by continuing to use these old technologies, normally this is done to either save money or because they can’t afford or want the downtime to install and configure new equipment.
+But this leaves them at a disadvantage when it comes to cyber attacks.
+Companies need to be stricter with their hardware and software, when it comes to out of date technologies they could simply replace it during non busy hours or do a rolling update. If they are attacked it could be a lot worse than a few hours of down time and if for some reason they can’t update the old tech they could simply segregate it on its own V-Lan so it is inaccessible to the outside world.</p>
+<h2>What is likely to be able to do be done soon in cyber security?</h2>
+<p.1>The future of cybersecurity looks very promising.  Cyber security jobs are expected to grown to 1.8 million by 2022.
+Over the last decade there has been an uptick in state-run or state sanctioned cyber-warfare. This all began in 2010 with the Stuxnet worm. This worm implanted on Iranian uranium centrifuge computers to trigger equipment failure. By 2017 a Russian backed hacking group called Sandworm where going after a broad range of targets including American Corporations and Eastern Europe energy grids.
+There will also be more hackers, according to a study done by Michel Cukier who works out of the University of Maryland. Cyber-attacks have become so frequent now, that they occur on average every 39 seconds!</p>
+<h2>What technological or other developments make this possible?</h2>
+<p.1>Artificial Intelligence (AI) has come so far in the last decade it is used in many industries now. 
+AI and machine learning algorithm can be used to automate many tasks, crunch data and even make decisions faster than a human could. The problem is this inherently creates cybersecurity risks.
+A lot of potentioal exploits are poorly understood at their time of release, and because of this and a lot of companies are relying on machine learning for critical tasks. They are sure to become a target for hackers. But AI won’t just give hackers more targets, Cybersecurity developers will also use AI to address vulnerabilities and also detect issues before they can be taken advantage of and repel hackers.</p>
+<h2>What is the likely impact</h2>
+<p.1>The likely impact is there is going to be more global cyber attacks and cyber warfare, we are moving into a day and age where everyone’s house, car and phone are all connected and potentially exploitable.
+But because of this there is going to be an increase in infosec positions and a push for more people to be trained in cyber security and ethical hacking courses.
+Newer technologies are already starting to enter the cybersecurity industry for instance AI and behavioral analytics is starting to be implemented in systems to help detect vulnerabilities and attacks and at some point future developers might use AI to repel cyber attacks and also embed it in user interfaces to warn users about risky websites or poor security choices. AI might also be used to simulate network attacks, revealing any week points so they can be patched. Behavioral analytics helps determine patterns on systems and networks to detect potential and real time cyber threats. For instance, an abnormal increase in data transmission from a certain computer or phone could indicate a cyber security issue. While behavioral analytics is mostly used for networks it is now starting to be used in applications and user devices as well.
+Older tech will always be a problem though, there is not much motivation for manufactures to keep patching older hardware, and most companies simply don’t want to mess with hardware that is working and don’t realize the security benefits that come with newer hardware, In the future, there is no reason this still won’t be an issue, it could also get worse. Many companies and consumers are perfectly satisfied with the performance of their current generation equipment, when today’s cutting-edge turns into legacy tech, most of them wont upgrade, and hackers are sure to take notice.</p>
+<h2>How will this affect you?</h2>
+<p.1>This will affect me in a lot of ways, not only in my daily life but possibly my work life.
+There will be more cyber attacks, and cyber warfare than ever before, meaning that I will have to possibly take even more steps to ensure my online presence is secure. Cyber criminals have become more advanced by the day and we are all going to have to become smarter ourselves to keep our own data secure. For instance two factor authentication (2FA) will possibly become standard for any website you login to (weather its Facebook or my own bank).
+It could even be standard that I would have to own an RFID blocking wallet for all my bankcards and employee identification cards so that they don’t get stolen when I am out in public, it has become so simple for this to happen considering the hardware to do this now fits in the palm of your hand.
+Most of our critical infrastructures are all connected to the world web now, Imagine what could happen if someone manages to hack the power grid or any other public utility infrastructure?, for instance the traffic light systems and I am driving home about to go through a intersection and they change both lights to green.
+Everything I now do is on the net, weather it is talking to friends, watching a movie I can walk around my house and ask Google to turn my TV on and play my favorite show, I have some much technology at home to make my life easier but it could also potentially open me up to a potential cyber attack. To secure it the best option would be to run a software firewall on a dedicated computer like Pfsense to monitor and manage all the inbound and outbound traffic of my home. 
+I don’t really think this would affect my family or friends I would also not hesitate to help them secure their own online presence and home.</p>
+
+</p.l>
 					   </div>
 					 </div>
 				  
@@ -563,6 +884,8 @@ My libertarian or more financially savvy friends will be delighted to the develo
 					 </div>
 				  
 				 </div>
+				 <div class="divider"></div>
+<img src="https://gykam.com/previews/the-dangers-of-using-hot-tap-water-for-cooking-and-drinking-1545253415639.jpg" height="200" width="700" class="center">
 
 				 <div class="item">
 				   
@@ -573,63 +896,78 @@ My libertarian or more financially savvy friends will be delighted to the develo
 					  <!--IT Work tab-->
 						<div class="row">
 						  <div class="col-sm-12 text-centre">
-
-							<p><h1>Professional Interview</h1>
+							<p><h1>Professional Interview</h1></p>
 						  </div>
 						  <div class="col-sm-12">
-							<p>The interview that we conducted was with an IT professional that works with both a independent software contractor and the Australian Securities Exchange (ASX). Below you will find a summary of the answers given by our Interviewed IT Professional. Due to contract issues we are unable to use the recording, but I have attached the transcript in the report attached.  
+							<p.l>							<p>The interview that we conducted was with an IT professional that works with both a independent software contractor and the Australian Securities Exchange (ASX). Below you will find a summary of the answers given by our Interviewed IT Professional. Due to contract issues we are unable to use the recording, but I have attached the transcript in the report attached.  
 
- 
 
-							  <h2>1. Please tell us about your IT work. What exactly do you do?</h2>
 
-Most of my work is in the financial markets. Previously I worked in research roles using programming to research different concepts in the stock market. My current role is technically called product owner with a software development company that is replacing the ASX backend clearance and settlement system which is basically a big database.<br>
-
-It's quite a well-known system it's called chess. The last time it was replaced was 30 years ago. We are using a Distributed ledger like a block chain solution. The company I work for has their own smart contracting language that pairs the buyers and the sellers together. The role that I'm in is product owner.<br>
-
-This is that under the agile model of software development. Where you have short term targets and sprints in contrast to a waterfall model where you’ll be planning for months or even years. Because there is a big infrastructure, we must split everything into like 2-week intervals. My role is to communicate from the customer, The ASX, and our team of software engineers and testing for any problems that may come up under the ASX Security guidelines.<br>
-
-<br><h2>2. Please tell us about the industry you work in.</h2>
-
-I’ve always been in financial markets. Previously as a big broker dealer for Charles Shaub. Most of my work is about financial markets. Either stocks or the backend plumbing of how it works. ITs great being multi-industry because I have so much room to work with. 
-
-<br><h2>3. What other kinds of work do you have to do?</h2>
-
-In Previous roles I've done a lot of managerial stuff, current role is slightly different as instead of managing people our professional is a managing a product.  
-
-A Large portion of work is writing tests to make sure that everything in the project is by ASX standards of development and security.  
-
-<br><h2>4. Who are all the different people you interact with in your work? Please tell us about them.</h2>
- 
-
-I'm the bridge between the IT guys and the finance guys so they’re is a big range of personality types that I've got to work with. 
-
-<br><h2>5. Please tell us about your interactions with other IT professionals.</h2>
-
-Because of the nature of the project we have some of the best developers from around Australia for the languages that we are using. We have a lot of smart and quirky people. Overall, everyone is quite professional and nice on the IT side of things. Everyone on the ASX side is a little more integrated into suit culture but also still very nice people. As I must be the bridge between the finance guys and the IT guys it helps to be friends with them all to understand where they are coming from. 
-
-<br><h2>6. What about your interactions with clients or investors?</h2>
-
-There can be challenges with any client, especially such a bug project like this, there are times where we don’t agree on what should be done. In that case we must negotiate to get the client what they want while still doing it in a safe, efficient and sustainable way.  
-
-<br><h2>7. What aspects of your work do you spend most time on? Please tell us about these.</h2> 
-
-When I started it was learning how to communicate with my coworkers effectively and get like settled in but now the most time would be to write those tests that verify that we are doing the right thing, something that meets the requirements. A lot of it is managing the workload of others but currently in the project it's a lot of tests. 
-
-<br><h2>8. Which aspects of your work do you find most challenging?</h2>
-
-I made a very big change to get into this role, as I hadn't done any of the background or plumbing stuff yet. I didn’t have much exposure to all the little transfers and terms that the ASX has for things. Smart contacts and the new test language were also a big struggle to learn. It took me about 6 months to feel like I was adding value to the team as there was just so much to understand when I started. 
-
-<br><h2>9. Finally, can you share an example of the work you do that best captures the essence of the IT industry?</h2>
-
-I don’t know that seems like a vague one so I'll try put it as best as I can. Using the latest technology to improve technologies, to streamline and to make things easier and more efficient for everyone. </div>
-						</p>
-=======
-				
+								<h2>1. Please tell us about your IT work. What exactly do you do?</h2>
+  
+  Most of my work is in the financial markets. Previously I worked in research roles using programming to research different concepts in the stock market. My current role is technically called product owner with a software development company that is replacing the ASX backend clearance and settlement system which is basically a big database.<br>
+  
+  It's quite a well-known system it's called chess. The last time it was replaced was 30 years ago. We are using a Distributed ledger like a block chain solution. The company I work for has their own smart contracting language that pairs the buyers and the sellers together. The role that I'm in is product owner.<br>
+  
+  This is that under the agile model of software development. Where you have short term targets and sprints in contrast to a waterfall model where you’ll be planning for months or even years. Because there is a big infrastructure, we must split everything into like 2-week intervals. My role is to communicate from the customer, The ASX, and our team of software engineers and testing for any problems that may come up under the ASX Security guidelines.<br>
+  
+  <br><h2>2. Please tell us about the industry you work in.</h2>
+  
+  I’ve always been in financial markets. Previously as a big broker dealer for Charles Shaub. Most of my work is about financial markets. Either stocks or the backend plumbing of how it works. ITs great being multi-industry because I have so much room to work with. 
+  
+  <br><h2>3. What other kinds of work do you have to do?</h2>
+  
+  In Previous roles I've done a lot of managerial stuff, current role is slightly different as instead of managing people our professional is a managing a product.  
+  
+  A Large portion of work is writing tests to make sure that everything in the project is by ASX standards of development and security.  
+  
+  <br><h2>4. Who are all the different people you interact with in your work? Please tell us about them.</h2>
+  
+  
+  I'm the bridge between the IT guys and the finance guys so they’re is a big range of personality types that I've got to work with. 
+  
+  <br><h2>5. Please tell us about your interactions with other IT professionals.</h2>
+  
+  Because of the nature of the project we have some of the best developers from around Australia for the languages that we are using. We have a lot of smart and quirky people. Overall, everyone is quite professional and nice on the IT side of things. Everyone on the ASX side is a little more integrated into suit culture but also still very nice people. As I must be the bridge between the finance guys and the IT guys it helps to be friends with them all to understand where they are coming from. 
+  
+  <br><h2>6. What about your interactions with clients or investors?</h2>
+  
+  There can be challenges with any client, especially such a bug project like this, there are times where we don’t agree on what should be done. In that case we must negotiate to get the client what they want while still doing it in a safe, efficient and sustainable way.  
+  
+  <br><h2>7. What aspects of your work do you spend most time on? Please tell us about these.</h2> 
+  
+  When I started it was learning how to communicate with my coworkers effectively and get like settled in but now the most time would be to write those tests that verify that we are doing the right thing, something that meets the requirements. A lot of it is managing the workload of others but currently in the project it's a lot of tests. 
+  
+  <br><h2>8. Which aspects of your work do you find most challenging?</h2>
+  
+  I made a very big change to get into this role, as I hadn't done any of the background or plumbing stuff yet. I didn’t have much exposure to all the little transfers and terms that the ASX has for things. Smart contacts and the new test language were also a big struggle to learn. It took me about 6 months to feel like I was adding value to the team as there was just so much to understand when I started. 
+  
+  <br><h2>9. Finally, can you share an example of the work you do that best captures the essence of the IT industry?</h2>
+  
+  I don’t know that seems like a vague one so I'll try put it as best as I can. Using the latest technology to improve technologies, to streamline and to make things easier and more efficient for everyone. </div>
+						  </p>
+							</div>
 						  </div>
 						</div>
 					 
 					</div>
+					<div class="divider"></div>
+
+<!--Ideal Jobs tab-->
+<div class="row">
+	<div class="col-sm-12 text-centre">
+	 <p> <h1>Ideal Jobs</h1></p>
+
+	 <p.l>With Information Technology being such a broad field, there is room for many types of people to have a role in the industry. The waterLog team has a diverse range of personality types. As such, it seems fitting that we would all have very different plans for our career paths. 
+<br><br>
+Our ideal jobs have some soft skills in common. As IT is a teamwork based industry, communication skills are a highly sought after skill in most roles. Most of our ideal jobs also have a strong emphasis on problem solving and analytical skills. 
+<br><br>
+The technical skillsets for each job we have selected are unique from each other. The programmer roles overlap in many ways however there are differences between Front End and PHP Developers. While the Front will generally focus on visual development, The PHP developer is more likely to focus their work in the back end, and be highly proficient in SQL.PHP and Front-End developers will both generally be competent in JavaScript. 
+<br><br>
+The business analyst role is unique in that it is  a hybrid role, i.e implementing  technology to utilise a business skillset. Data analysis is something that a business analyst will need to be proficient in, which broadly overlaps with with PHP development (As SQL is a language used for data management).  
+Data Centre Technicians and Network engineers, also handle data but in a very different way from an analyst. These roles  more focus on the administration, maintenance and handling of data networks. Both will generally have experience working in data centres.  
+<br><br>
+Cyber security is unique to the rest of our job choices, as it is centred around protecting data from intentional threats. However there is some overlap with the Developer roles in terms of being tailored to businesses needs and designing applications accordingly. <p.l>
 
 					<div class="divider"></div>
 
@@ -640,7 +978,9 @@ I don’t know that seems like a vague one so I'll try put it as best as I can. 
 				<br><br>
 						<p>The following is a table of the group members ideal jobs from assignment 1.  
 						We have combined the skills required from the job listings and external sites with burning glass data provided by RMIT. </p> <br>
- <img src="https://github.com/henry-james-git/forked-a2/blob/main/Burning%20Glass%202.png?raw=true" class="PP" width="500" height="700" alt="ProfilePicture">
+						<div class = "gfg"></div>
+						<img src="https://github.com/MaxTRMIT/Assignment2waterLog/blob/main/Burning%20Glass%203.png?raw=true" class = "center2">
+						</div>
 					
 						   <h2><p> Has my opinion changed and why? </h2>
  
@@ -705,6 +1045,119 @@ After looking into the various types of employment in cyber security I would con
 		
 		 </div>
 		 <div class="divider"></div>
+		 <h1>Group Reflection</h1> 
+
+ 
+
+<h2>Individual Reflections </h2> 
+
+ 
+
+<h3>Imogen Leaver </h3> 
+
+<h4>What went well? </h4>  
+
+<p.l>The communication between all team members was fantastic. Each person contributed equally and was open to contributing as much as was needed to complete the task or assignment. Each personality complemented the other group members, so everyone could offer tangible suggestions, solutions, and expertise. </p> 
+
+<h4>What could be improved? </h4>  
+
+<p.l>We are all learning in the IT space, so found areas of technology skills to be lacking. This was no one person, rather the unanimity of the group. It certainly makes sense we are learning about IT and I feel we all progressed and adapted quickly in the short time we had to learn the necessary skills. </p> 
+
+ <h4>What was surprising? </h4>  
+
+<p.l>The striking differences in our ages, lives, and reasons we are studying. Even more surprising was how these differences caused no tension or friction, rather created coherence, and accord. </p> 
+
+<h4>What have you learnt about groups? </h4>  
+
+<p.l>They can be really productive, and I never thought I would be glad I was completing an assignment with a group rather than solo! I honestly feel I could not have achieved this assignment without each member of our group, what each person contributed was worthwhile and of benefit to the group </p> 
+
+ 
+
+<h3>Max Torti</h3> 
+
+<h4>What went well? </h4>  
+
+<p.l>When allocating the workload between members, everyone had an optimistic viewpoint. Everyone was eager to work and help wherever they could. </p> 
+
+<h4>What could be improved? </h4>  
+
+<p.l>Our team had a great workflow, however the biggest problem holding us back was our understanding of I.T. Due to the majority of us completing this course in the hopes to start a career in the field of I.T, many of us didn’t have much background knowledge on the subject. </p> 
+
+ <h4>What was surprising? </h4>  
+
+<p.l>My experience with group projects in the past hasn’t been great, most of the time there is little enthusiasm towards actually completing the task. However, this group was the complete opposite, members were completing their assigned task and going as far as to ask for more work from others. I also found the acceptance of our team to be quite amazing, everyone has their own strengths and weaknesses, however due to the cohesion of this team I believe we completed the task to a high level of satisfaction. </p>  
+
+<h4>What have you learnt about groups? </h4>  
+
+<p.l>The waterLog team consists of members from many walks of life, this turned out to be very beneficial as each member had insight to other I.T concepts. Generally, group assignments end in a bad experience, however my experience in this team has been fluid and enjoyable. </p>  
+
+ 
+
+<h3>Liam O’dell</h3> 
+
+<h4>What went well? </h4>  
+
+<p.l>I was surprised to have such a communicative enjoyable team to be able to do the assignment with. We worked well as a team to allot the appropriate workload at the beginning so that the project had a strong foundation of content before we started adding anything to the website.</p>  
+
+<h4>What could be improved? </h4>  
+
+<p.l>My technical knowledge of Git-Hub and how we can affectively use it as a team has improved, but it can be improved a lot further as this was the area that myself and most of my teammates had the most trouble with.</p>  
+
+ <h4>What was surprising? </h4>  
+
+<p.l>I was surprised by how well everyone worked as a team. Everyone showed up on time, there was a community presence while working together and it made the project a lot easier than what it could have been. Everyone is from different areas, backgrounds ages and personalities and yet we all got along well and were able to help each other as we struggled together.</p>  
+
+<h4>What have you learnt about groups? </h4>  
+
+<p.l>I have learned that when I work by myself, I have a lot more anxiety then when I work in a team of other likeminded individuals. This is because I don’t have anyone with a familiar circumstance to relate to. While working in a group I was able to bounce ideas and have an open discourse with my teammates. This allowed myself and, I think, the others to grow and develop faster as a group than we would have alone. </p>   
+
+
+<h3>Benjamin Christy</h3> 
+
+<h4>What went well? </h4>  
+
+<p.l>The group functioned really well, everyone communicated through teams perfectly, and we could all work together to meet up twice a week. </p>  
+
+<h4>What could be improved? </h4>  
+
+<p.l>The only issue that we had was to do with Github. We all need to improve our knowledge with working with Github and using the branches function more effectively. </p>   
+
+ <h4>What was surprising? </h4>  
+
+<p.l>The most surprising thing about this group was there where no issues with the team members where all happy and could all work together perfectly and delegate tasks to one another. </p>   
+
+<h4>What have you learnt about groups? </h4>  
+
+<p.l>I have learned that it in working in a team communication is key and learning each other’s strengths and weaknesses help a lot in delegating tasks to make the work you are doing together flow more effectively. </p>  
+
+
+<h2>Group Reflection</h2> 
+
+<h4>What went well </h4>  
+
+<p.l>The consensus is the group worked very well together. Everyone contributed equally, felt heard and supported. Communication and discourse were excellent, everyone attended meetings, took turns in chairing meetings, and discussed concerns, raised questions, and offered solutions via Microsoft Teams. Contribution of workload was even and equal, with each member assisting others with their delegated section as well as taking full responsibility for their own. </p> 
+
+<p.l>Everyone took leadership at differing times and in areas they had the most experience and confidence in. </p> 
+
+ <h4>What could be improved? </h4>  
+
+<p.l>The lacking element amongst the group was a general knowledge of technology (thus the reason we are enrolled in this course). Github skills were certainly amateurish at the onset of the assignment, however through a collaborative effort, each group member saw steady improvement in their own skills. </p> 
+
+ <h4>What was surprising? </h4>  
+
+<p.l>Each group member initially had trepidation with regards to group work. Some had previously experienced disorderly and fragmented group environments. Each member has expressed their relief and enjoyment of the current group environment and very much look forward to engaging again for Assignment 3 and beyond. </p> 
+
+<p.l>Another surprising factor was our age gaps, the youngest member being still in high school and 17 years and the oldest being almost 40. Even more surprising was the absence effect this had on the group’s ability to work together. </p> 
+
+  
+<h4>What have you learnt about groups? </h4>  
+
+<p.l>Throughout the assignment, the group learnt of each other’s backgrounds, differing lives, locations and lifestyles, strengths, and weaknesses and the individual aims for the future and career goals. </p> 
+
+<p.l>The group ascertained early on that each member had varied and differing schedules and to ensure cohesion, flexibility was needed. This became a positive and group asset as each member could take shifts in workloads on days or times of the day which suited each of them. </p> 
+
+<p.l>Compromise, support and treating others as you wish to be treated is fundamental to any working relationship. This was an initial learning curve as each member became familiar with the other and discovered how best to offer this. </p> 
+		 <div class="divider"></div>
    
 		 <!-- References tab -->
 		 <div class="row">
@@ -712,23 +1165,34 @@ After looking into the various types of employment in cyber security I would con
 			 <h1>References</h1>
 		   </div>
 		   <div class="col-sm-12">
+			   <p style="font-size:2vw;">Website Production Reference List</p>
 			 <p>Schools, W., 2020. CSS Height And Width Dimensions. [online] W3schools.com. Available at: https://www.w3schools.com/css/css_dimension.asp [Accessed 5 October 2020].
 				 <br>CodePen. 2020. Parallax Scrolling Website Template. [online] Available at: https://codepen.io/heathriel/pen/eyncz [Accessed 5 October 2020].
-		   <br>Schools, W., 2020. CSS Overflow Property. [online] W3schools.com. Available at: https://www.w3schools.com/cssref/pr_pos_overflow.asp [Accessed 5 October 2020].
-	   <br><br>cryptocurrency and blockchain references<br>
-				 2020. How Does A Blockchain Work - Simply Explained. [online] Available at: <https://www.youtube.com/watch?v=SSo_EIwHSd4&ab_channel=SimplyExplained> [Accessed 12 October 2020].<br>
-				 Venafi.com. 2020. 4 Blockchain Uses Besides Cryptocurrency | Venafi. [online] Available at: <https://www.venafi.com/blog/4-new-uses-blockchain-beyond-cryptocurrency> [Accessed 19 October 2020]. <br>
-				 Icaew.com. 2020. History Of Blockchain. [online] Available at: <https://www.icaew.com/technical/technology/blockchain/blockchain-articles/what-is-blockchain/history> [Accessed 9 October 2020]. <br>
-				 Commbank.com.au. 2020. CBA Blocks Credit Card Purchases Of Virtual Currencies. [online] Available at: <https://www.commbank.com.au/guidance/newsroom/virtual-currency-credit-card-block-201802.html> [Accessed 7 October 2020]. <br>
-					 
+		   <br>Schools, W., 2020. CSS Overflow Property. [online] W3schools.com. Available at: https://www.w3schools.com/cssref/pr_pos_overflow.asp [Accessed 5 October 2020].<br>
+		   <p style="font-size:2vw;">Cloud, Services, Servers Reference List</p> 
+
+		   <p>Sharma, V., 2018. Powerful Uses of Cloud Computing. [online] Klient Solutech. Available at: <https://www.klientsolutech.com/powerful-uses-of-cloud-computing/> [Accessed 5 October 2020]. 
+		
+		   <br>Microsoft Azure. 2020. What Is Cloud Computing?. [online] Available at: <https://azure.microsoft.com/en-au/overview/what-is-cloud-computing/> [Accessed 5 October 2020]. 
+		
+		   <br>Kerravala, Z., 2017. What Are Data Centres? How They Work And How They Are Changing In Size And Scope. [online] Networkworld. Available at: <https://www.networkworld.com/article/3223692/what-is-a-data-centerhow-its-changed-and-what-you-need-to-know.html> [Accessed 12 October 2020]. 
+		   <br> 
+		   </p>   
+		   <br><p style="font-size:2vw;">Cryptocurrency and Blockchain Reference List<br></p>
+		   <p>2020. How Does A Blockchain Work - Simply Explained. [online] Available at: <https://www.youtube.com/watch?v=SSo_EIwHSd4&ab_channel=SimplyExplained> [Accessed 12 October 2020].<br>
+ Venafi.com. 2020. 4 Blockchain Uses Besides Cryptocurrency | Venafi. [online] Available at: <https://www.venafi.com/blog/4-new-uses-blockchain-beyond-cryptocurrency> [Accessed 19 October 2020]. <br>
+		   Icaew.com. 2020. History Of Blockchain. [online] Available at: <https://www.icaew.com/technical/technology/blockchain/blockchain-articles/what-is-blockchain/history> [Accessed 9 October 2020]. <br>
+		   Commbank.com.au. 2020. CBA Blocks Credit Card Purchases Of Virtual Currencies. [online] Available at: <https://www.commbank.com.au/guidance/newsroom/virtual-currency-credit-card-block-201802.html> [Accessed 7 October 2020]. <br>
+	   <br>
 	   </p>
 		   </div>
 		 </div>
    
 			 </div> 
-		 <div class= "footer">
+		<!-- <div class= "footer">
 		   <p>Water Near You - Team Profile</p>
-		 </div>
+		 </div>-->
 	   </section>
 		   </footer>		   
    </body>
+   
